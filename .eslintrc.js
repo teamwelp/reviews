@@ -6,5 +6,21 @@
  */
 
 module.exports = {
-  extends: './node_modules/eslint-config-hackreactor/index.js'
+  extends: 'airbnb'
 };
+
+// module.exports = {
+//  “extends”: “airbnb”,
+//  “env”:{
+//    “browser”: true,
+//  },
+//  “plugins”: [
+//    “react”,
+//    “jsx-a11y”,
+//    “import”
+//  ],
+//  “rules”: {
+//    “no-tabs”: 0,
+//  }
+// };
+
