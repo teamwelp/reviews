@@ -24,3 +24,6 @@ coverage
 build/
 dist/
 
+# Sample Mock Data
+seed_data
+
