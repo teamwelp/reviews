@@ -22,7 +22,8 @@
     "start": "webpack -w",
     "test": "jest --coverage",
     "seed": "node server/seed_data/addDataToDB.js",
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -55,7 +56,7 @@
     "react-test-renderer": "^16.2.0",
     "faker": "^4.1.0",
     "file-system": "^2.2.2",
-    "jest": "^22.4.0",
+    "jest": "^22.4.2",
     "nodemon": "^1.15.1",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
