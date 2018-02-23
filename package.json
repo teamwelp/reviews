@@ -20,7 +20,9 @@
   },
   "scripts": {
     "start": "webpack -w",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "seed": "node server/seed_data/addDataToDB.js",
+    "server": "nodemon server/index.js"
   },
   "dependencies": {
     "babel-core": "^6.26.0",

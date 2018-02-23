@@ -8,9 +8,9 @@ const app = express();
 
 mongoose.connect('mongodb://localhost/welp');
 
-app.use(express.static(path.join(__dirname, '/../public/index.html')));
+app.use(express.static(path.join(__dirname, '/../public')));
 
-app.use('/', reviewRouter);
+app.use('/businesses', reviewRouter);
 
 app.listen(8000, () => {
   console.log('listening to port 8000');
