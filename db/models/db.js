@@ -4,7 +4,9 @@ mongoose.Promise = global.Promise;
 
 const reviewSchema = mongoose.Schema({
   businessId: Number,
-  userId: Number,
+  user: {
+    userId: Number,
+  },
   businessRating: Number,
   dateCreated: Date,
   text: String,
@@ -36,9 +38,7 @@ const models = {
 // Database Methods
 const insertData = (dbModel, data) => new models[dbModel](data).save();
 
-const retrieveData = (dbModel, query) => {
-  return models[dbModel].find(query).exec();
-};
+const retrieveData = (dbModel, query) => models[dbModel].find(query).lean().exec();
 
 module.exports.insertData = insertData;
 module.exports.retrieveData = retrieveData;

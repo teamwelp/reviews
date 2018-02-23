@@ -25,5 +25,6 @@ build/
 dist/
 
 # Sample Mock Data
-seed_data
+mock_reviews.json
+mock_users.json
 

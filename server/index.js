@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const db = require('../db/models/db.js');
 const path = require('path');
 const reviewRouter = require('./router/reviews.js');
 
