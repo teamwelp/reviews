@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 
+mongoose.Promise = global.Promise;
+
 const reviewSchema = mongoose.Schema({
-  business_id: Number,
-  user_id: Number,
-  business_rating: Number,
-  date_created: Date,
+  businessId: Number,
+  userId: Number,
+  businessRating: Number,
+  dateCreated: Date,
   text: String,
   image: String,
-  review_rating: {
+  reviewRating: {
     useful: Number,
     funny: Number,
     cool: Number,
@@ -15,7 +17,7 @@ const reviewSchema = mongoose.Schema({
 });
 
 const userSchema = mongoose.Schema({
-  user_id: Number,
+  userId: { type: Number, unique: true },
   username: String,
   image: String,
   friends: Number,
@@ -34,7 +36,9 @@ const models = {
 // Database Methods
 const insertData = (dbModel, data) => new models[dbModel](data).save();
 
-const retrieveData = dbModel => models[dbModel].find().exec();
+const retrieveData = (dbModel, query) => {
+  return models[dbModel].find(query).exec();
+};
 
 module.exports.insertData = insertData;
 module.exports.retrieveData = retrieveData;
