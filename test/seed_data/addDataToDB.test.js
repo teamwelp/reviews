@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const db = require('../../db/models/db.js');
 
 describe('test insertDataToDB method (integration test)', () => {
-
   beforeAll(async () => {
     await mongoose.connect('mongodb://localhost/welp');
     await mongoose.connection.dropDatabase();
@@ -14,7 +13,7 @@ describe('test insertDataToDB method (integration test)', () => {
     // await db.connection.close();
   });
 
-  test('insertDaToDB method should insert user data to welp database',async () => {
+  test('insertDaToDB method should insert user data to welp database', async () => {
     const testUserData = [{
       userId: 2000,
       username: 'hello',
@@ -57,7 +56,7 @@ describe('test insertDataToDB method (integration test)', () => {
 
     await helper.insertDataToDB('reviews', testReviewData).then();
 
-    await db.retrieveData('reviews', { businessId: testReviewData[0].businessId}).then((data) => {
+    await db.retrieveData('reviews', { businessId: testReviewData[0].businessId }).then((data) => {
       expect(data[0].businessId).toBe(testReviewData[0].businessId);
       expect(data[0].user.userId).toBe(testReviewData[0].user.userId);
       expect(data[0].businessRating).toBe(testReviewData[0].businessRating);
