@@ -4,9 +4,8 @@ const helper = require('./helper.js');
 
 mongoose.connect('mongodb://localhost/welp');
 
-helper.insertDataToDB('users', mockData.userData, () => console.log('complete'));
-helper.insertDataToDB('reviews', mockData.reviews, () => {
+helper.insertDataToDB('users', mockData.userData).then(() => console.log('complete'));
+helper.insertDataToDB('reviews', mockData.reviews).then(() => {
   mongoose.disconnect();
   console.log('complete');
 });
-

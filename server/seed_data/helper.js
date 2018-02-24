@@ -1,12 +1,12 @@
 const db = require('./../../db/models/db.js');
 
-const insertDataToDB = (dbModel, data, cb) => {
+const insertDataToDB = (dbModel, data) => {
   const promises = [];
   for (let i = 0; i < data.length; i += 1) {
     promises.push(db.insertData(dbModel, data[i]));
   }
 
-  Promise.all(promises).then(cb);
+  return Promise.all(promises);
 };
 
 module.exports.insertDataToDB = insertDataToDB;
