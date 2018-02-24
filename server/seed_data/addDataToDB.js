@@ -1,18 +1,12 @@
 const mockData = require('./data_generator.js');
 const mongoose = require('mongoose');
-const db = require('./../../db/models/db.js');
+const helper = require('./helper.js');
 
 mongoose.connect('mongodb://localhost/welp');
 
-const insertDataToDB = (dbModel, data) => {
-  const promises = [];
+helper.insertDataToDB('users', mockData.userData, () => console.log('complete'));
+helper.insertDataToDB('reviews', mockData.reviews, () => {
+  mongoose.disconnect();
+  console.log('complete');
+});
 
-  for (let i = 0; i < data.length; i += 1) {
-    promises.push(db.insertData(dbModel, data[i]));
-  }
-
-  Promise.all(promises).then(() => console.log('complete'));
-};
-
-insertDataToDB('users', mockData.userData);
-insertDataToDB('reviews', mockData.reviews);
