@@ -42,4 +42,5 @@ const retrieveData = (dbModel, query) => models[dbModel].find(query).lean().exec
 
 module.exports.insertData = insertData;
 module.exports.retrieveData = retrieveData;
+module.exports.models = models;
 

@@ -61,7 +61,7 @@ describe('test reviews route', () => {
 describe('test error handler of reviews route', async () => {
   const response = await request(app).get('/businesses/xxxx/reviews');
 
-  test('it should throw an error for non-existent business id', async () => {
+  test('it should return a 500 status code for non-existent business id', async () => {
     expect(response.statusCode).toBe(500);
   });
 });
@@ -73,7 +73,7 @@ describe('test error handlers for addUsersToReviews function', async () => {
     },
   }];
 
-  test('it should throw an error when given a non-existent user id', async () => {
+  test('it should return "user not found" when given a non-existent user id', async () => {
     const response = await helpers.addUsersToReviews(testData);
 
     expect(response[0].user).toBe('user not found');

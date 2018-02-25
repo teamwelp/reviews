@@ -11,6 +11,4 @@ app.use(express.static(path.join(__dirname, '/../public')));
 
 app.use('/businesses', reviewRouter);
 
-app.listen(8000, () => {
-  console.log('listening to port 8000');
-});
+module.exports = app;
