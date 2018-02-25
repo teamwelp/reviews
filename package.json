@@ -10,8 +10,8 @@
   "scripts": {
     "start": "webpack -w",
     "seed": "node server/seed_data/addDataToDB.js",
-    "server": "nodemon server/index.js",
-    "test": "jest --coverage"
+    "server": "nodemon server/server.js",
+    "test": "jest --coverage --forceExit"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -34,6 +34,7 @@
     "file-system": "^2.2.2",
     "jest": "^22.4.2",
     "nodemon": "^1.15.1",
+    "supertest": "^3.0.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   }

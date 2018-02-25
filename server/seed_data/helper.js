@@ -1,4 +1,4 @@
-const db = require('./../../db/models/db.js');
+const db = require('./../../db/models/review.js');
 
 const insertDataToDB = (dbModel, data) => {
   const promises = [];
