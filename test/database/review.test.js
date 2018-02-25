@@ -1,4 +1,4 @@
-const db = require('../../db/models/db.js');
+const db = require('../../db/models/review.js');
 const mongoose = require('mongoose');
 
 describe('test database methods', () => {
@@ -35,11 +35,11 @@ describe('test database methods', () => {
   test('should retrieve data when retrieveData method is invoked', async () => {
     const data = await db.retrieveData('users', {});
 
-    expect(testData.userId).toEqual(data[0].userId);
-    expect(testData.username).toEqual(data[0].username);
-    expect(testData.image).toEqual(data[0].image);
-    expect(testData.friends).toEqual(data[0].friends);
-    expect(testData.reviews).toEqual(data[0].reviews);
-    expect(testData.photos).toEqual(data[0].photos);
+    expect(data[0].userId).toEqual(testData.userId);
+    expect(data[0].username).toEqual(testData.username);
+    expect(data[0].image).toEqual(testData.image);
+    expect(data[0].friends).toEqual(testData.friends);
+    expect(data[0].reviews).toEqual(testData.reviews);
+    expect(data[0].photos).toEqual(testData.photos);
   });
 });
