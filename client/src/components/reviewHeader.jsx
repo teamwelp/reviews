@@ -15,12 +15,13 @@ const ReviewHeader = (props) => {
     );
   });
 
-  console.log(divStars);
+  const date = new Date(props.date);
+  const dateString = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+
   return (
     <div className="review-header">
       <div className="rating">{props.rating}</div>
-      {divStars}
-      <div className="date-created">{props.date}</div>
+      {divStars}<span className={style.date}>{dateString}</span>
     </div>
   );
 };
