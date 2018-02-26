@@ -1,0 +1,19 @@
+.reviewWrapper {
+  width: 381.875px;
+  height: 321px;
+  padding: 0 15px;
+  float: left;
+}
+
+.redStar {
+  background-color: #D32323;
+  width: 19px;
+  height: 19px;
+  margin: 1px;
+  border-radius: 3px;
+}
+
+.hiddenStar {
+  display: none;
+}
+

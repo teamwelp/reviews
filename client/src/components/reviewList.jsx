@@ -9,7 +9,7 @@ const ReviewList = (props) => {
   }
 
   return (
-    <div>{reviews}</div>
+    <ul className={style.reviewList}>{reviews}</ul>
   );
 };
 
