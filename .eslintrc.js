@@ -6,7 +6,12 @@
  */
 
 module.exports = {
-  extends: 'airbnb'
+  extends: 'airbnb',
+  plugins: [
+   'react',
+   'import',
+   'jsx-a11y',
+ ],
 };
 
 // module.exports = {

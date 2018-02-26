@@ -24,3 +24,8 @@ coverage
 build/
 dist/
 
+# Sample Mock Data
+dummy_data/
+mock_reviews.json
+mock_users.json
+
