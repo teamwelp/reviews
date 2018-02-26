@@ -1,6 +1,7 @@
 import React from 'react';
 import mockReviews from '../../dummy_data/mock_reviews.js';
 import ReviewList from './reviewList.jsx';
+import style from './styles/reviewsStyle.css';
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -14,8 +15,8 @@ class Reviews extends React.Component {
 
   render() {
     return (
-      <div className = {'feed'}>
-        <div className = {'header'}>Recommended Reviews for {this.state.businessName}</div>
+      <div className={style.feed}>
+        <div className="header">Recommended Reviews for {this.state.businessName}</div>
         <ReviewList reviews={this.state.reviews} />
       </div>
     );

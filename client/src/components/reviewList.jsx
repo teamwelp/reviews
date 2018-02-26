@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewListEntry from './reviewListEntry.jsx';
+import style from './styles/reviewListStyle.css';
 
 const ReviewList = (props) => {
   const reviews = [];

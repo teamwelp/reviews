@@ -14,6 +14,17 @@ module.exports = {
           presets: ['react', 'es2015', 'env'],
         },
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader',
+      }, {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
     ],
   },
   output: {
@@ -21,6 +32,6 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.css'],
   },
 };

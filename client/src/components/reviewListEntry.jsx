@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './styles/reviewListEntryStyle.css';
 
 class ReviewListEntry extends React.Component {
   constructor(props) {
@@ -22,9 +23,21 @@ class ReviewListEntry extends React.Component {
           <div className="date-created">{this.props.review.dateCreated}</div>
         </div>
         <div className="review-rating">
-          <button className="vote-button">Useful</button>
-          <button className="vote-button">Funny</button>
-          <button className="vote-button">Cool</button>
+          <button className="vote-button">
+            <span className="vote-icon">X</span>
+            <span className="vote-label">Useful</span>
+            <span className="vote-count">2</span>
+          </button>
+          <button className="vote-button">
+            <span className="vote-icon">X</span>
+            <span className="vote-label">Funny</span>
+            <span className="vote-count">2</span>
+          </button>
+          <button className="vote-button">
+            <span className="vote-icon">X</span>
+            <span className="vote-label">Cool</span>
+            <span className="vote-count">2</span>
+          </button>
         </div>
       </div>
     );
