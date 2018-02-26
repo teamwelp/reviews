@@ -5,7 +5,7 @@ const ReviewHeader = (props) => {
   const stars = Array(5);
 
   stars.fill('redStar', 0, props.rating);
-  stars.fill('hiddenStar', props.rating - 1);
+  stars.fill('hiddenStar', props.rating);
 
   const divStars = stars.map((className) => {
     return (
