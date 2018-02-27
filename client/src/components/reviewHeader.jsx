@@ -20,7 +20,6 @@ const ReviewHeader = (props) => {
 
   return (
     <div className="review-header">
-      <div className="rating">{props.rating}</div>
       {divStars}<span className={style.date}>{dateString}</span>
     </div>
   );

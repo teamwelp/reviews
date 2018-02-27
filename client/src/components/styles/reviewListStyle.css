@@ -1,3 +1,11 @@
 .reviewList {
   list-style-type: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.listEntry {
+  border-bottom: 1px solid #e6e6e6;
+  overflow: auto;
+  margin: 10px;
 }

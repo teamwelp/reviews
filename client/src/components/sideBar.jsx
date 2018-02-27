@@ -7,24 +7,21 @@ const SideBar = (props) => {
     <div className={style.sideBar}>
       <div className="passport">
         <img className={style.avatar} src={props.user.image} alt="hello"></img>
-        <div className="user-info">
-          <div className="username">{props.user.username}</div>
-          <div className="user-location">redwood</div>
+        <div className={style.userInfo}>
+          <a className={style.username} href="/">{props.user.username}</a>
+          <div className={style.userLocation}>San Leandro, CA</div>
           <div className="user-stats">
-            <div className="friend-count">
-              <i className="material-icons">people</i>
-              <span>friends</span>
-              <span>{props.user.friends}</span>
+            <div className={style.statContainer}>
+              <i className={`material-icons ${style.sideBarIcons}`}>people</i>
+              <span className={style.figures}>{`friends ${props.user.friends}`}</span>
             </div>
-            <div className="review-count">
-              <i className="material-icons">star</i>
-              <span>reviews</span>
-              <span>{props.user.reviews}</span>
+            <div className={style.statContainer}>
+              <i className={`material-icons ${style.sideBarIcons}`}>star</i>
+              <span className={style.figures}>{`reviews ${props.user.reviews}`}</span>
             </div>
-            <div className="photo-count">
-              <i className="material-icons">camera_alt</i>
-              <span>photos</span>
-              <span>{props.user.photos}</span>
+            <div className={style.statContainer}>
+              <i className={`material-icons ${style.sideBarIcons}`}>camera_alt</i>
+              <span className={style.figures}>{`photos ${props.user.photos}`}</span>
             </div>
           </div>
         </div>

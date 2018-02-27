@@ -44,6 +44,7 @@ table {
 
 .fas.fa-star {
   color: white;
-  font-size: 15px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 1px 0;
 }

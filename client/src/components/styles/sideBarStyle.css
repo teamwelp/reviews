@@ -1,6 +1,9 @@
 .avatar {
   width: 60px;
   height: 60px;
+  border-radius: 4px;
+  float: left;
+  margin-right: 10px;
 }
 
 .sideBar {
@@ -8,5 +11,37 @@
   width: 217.125px;
   height: 222px;
   padding: 0 15px;
+  font-size: 12px
 }
 
+.username {
+  color: #0073bb;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.userLocation {
+  padding: 10px 0;
+  font-weight: bold;
+}
+.userInfo {
+  float:left;
+}
+
+.sideBarIcons {
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.statContainer {
+  height: 16px;
+  margin-bottom: 5px;
+  display: table;
+}
+
+.figures {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 16px;
+  height: 16px;
+}

@@ -10,7 +10,7 @@ class ReviewListEntry extends React.Component {
 
   render() {
     return (
-      <li>
+      <li className={style.listEntry}>
         <SideBar user={this.props.review.user} />
         <ReviewWrapper review={this.props.review} />
       </li>
