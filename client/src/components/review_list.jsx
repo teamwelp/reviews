@@ -1,5 +1,6 @@
 import React from 'react';
-import ReviewListEntry from './review_list_entry.jsx';
+import PropTypes from 'prop-types';
+import ReviewListEntry from './review_list_entry';
 import style from './styles/review_list_style.css';
 
 const ReviewList = (props) => {
@@ -11,6 +12,14 @@ const ReviewList = (props) => {
   return (
     <ul className={style.reviewList}>{reviews}</ul>
   );
+};
+
+ReviewList.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object),
+};
+
+ReviewList.defaultProps = {
+  reviews: [],
 };
 
 export default ReviewList;

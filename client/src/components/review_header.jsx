@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './styles/review_wrapper_style.css';
 
 const ReviewHeader = (props) => {
@@ -23,6 +24,16 @@ const ReviewHeader = (props) => {
       {divStars}<span className={style.date}>{dateString}</span>
     </div>
   );
+};
+
+ReviewHeader.propTypes = {
+  rating: PropTypes.number,
+  date: PropTypes.string,
+};
+
+ReviewHeader.defaultProps = {
+  rating: 0,
+  date: null,
 };
 
 export default ReviewHeader;

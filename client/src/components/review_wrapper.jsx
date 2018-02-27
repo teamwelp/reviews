@@ -1,32 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './styles/review_wrapper_style.css';
-import ReviewHeader from './review_header.jsx';
+import Votes from './votes';
+import ReviewHeader from './review_header';
 
 const ReviewWrapper = (props) => {
-
   return (
     <div className={style.reviewWrapper}>
       <ReviewHeader rating={props.review.businessRating} date={props.review.dateCreated} />
       <div className={style.reviewText}>{props.review.text}</div>
-      <div className="review-rating">
-        <button className={style.voteButton}>
-          <i className="far fa-lightbulb"></i>
-          <span className={style.buttonContents}>Useful</span>
-          <span>{props.review.reviewRating.useful}</span>
-        </button>
-        <button className={style.voteButton}>
-          <i className="far fa-smile"></i>
-          <span className={style.buttonContents}>Funny</span>
-          <span>{props.review.reviewRating.funny}</span>
-        </button>
-        <button className={style.voteButton}>
-          <i className="far fa-thumbs-up"></i>
-          <span className={style.buttonContents}>Cool</span>
-          <span>{props.review.reviewRating.cool}</span>
-        </button>
-      </div>
+      <Votes votes={props.review.reviewRating} />
     </div>
   );
+};
+
+ReviewWrapper.propTypes = {
+  review: PropTypes.object,
+};
+
+ReviewWrapper.defaultProps = {
+  review: {},
 };
 
 export default ReviewWrapper;

@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './styles/side_bar_style.css';
 
-const SideBar = (props) => {
-
+const Sidebar = (props) => {
   return (
     <div className={style.sideBar}>
       <div className="passport">
@@ -30,4 +30,12 @@ const SideBar = (props) => {
   );
 };
 
-export default SideBar;
+Sidebar.propTypes = {
+  user: PropTypes.object,
+};
+
+Sidebar.defaultProps = {
+  user: {},
+};
+
+export default Sidebar;
