@@ -1,7 +1,7 @@
 import React from 'react';
 import mockReviews from '../../dummy_data/mock_reviews.js';
-import ReviewList from './reviewList.jsx';
-import style from './styles/reviewsStyle.css';
+import ReviewList from './review_list.jsx';
+import style from './styles/reviews_style.css';
 
 class Reviews extends React.Component {
   constructor(props) {

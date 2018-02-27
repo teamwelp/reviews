@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './styles/reviewWrapperStyle.css';
+import style from './styles/review_wrapper_style.css';
 
 const ReviewHeader = (props) => {
   const stars = Array(5);

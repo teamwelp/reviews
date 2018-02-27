@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './styles/reviewListStyle.css';
-import SideBar from './sideBar.jsx';
-import ReviewWrapper from './reviewWrapper.jsx';
+import style from './styles/review_list_style.css';
+import Sidebar from './sidebar.jsx';
+import ReviewWrapper from './review_wrapper.jsx';
 
 class ReviewListEntry extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class ReviewListEntry extends React.Component {
   render() {
     return (
       <li className={style.listEntry}>
-        <SideBar user={this.props.review.user} />
+        <Sidebar user={this.props.review.user} />
         <ReviewWrapper review={this.props.review} />
       </li>
     );

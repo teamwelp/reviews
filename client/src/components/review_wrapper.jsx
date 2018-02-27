@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './styles/reviewWrapperStyle.css';
-import ReviewHeader from './reviewHeader.jsx';
+import style from './styles/review_wrapper_style.css';
+import ReviewHeader from './review_header.jsx';
 
 const ReviewWrapper = (props) => {
 
