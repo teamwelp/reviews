@@ -16,7 +16,7 @@ class Reviews extends React.Component {
   render() {
     return (
       <div className={style.feed}>
-        <div className="header">Recommended Reviews for {this.state.businessName}</div>
+        <div><span className={style.title}>Recommended Reviews for </span><span className={style.businessName}>{this.state.businessName}</span></div>
         <ReviewList reviews={this.state.reviews} />
       </div>
     );
