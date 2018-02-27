@@ -11,10 +11,16 @@
   height: 16px;
   margin: 1px;
   border-radius: 3px;
+  float: left;
 }
 
-.hiddenStar {
-  display: none;
+.grayStar {
+  background-color: #D5D5D5;
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  border-radius: 3px;
+  float: left;
 }
 
 .date {
@@ -35,4 +41,11 @@
 .reviewText {
   min-height: 153px;
   margin: 10px 0;
+}
+
+.star {
+  color: white;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 1px;
 }

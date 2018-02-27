@@ -5,13 +5,13 @@ const ReviewHeader = (props) => {
   const stars = Array(5);
 
   stars.fill('redStar', 0, props.rating);
-  stars.fill('hiddenStar', props.rating);
+  stars.fill('grayStar', props.rating);
 
   const divStars = stars.map((className) => {
     return (
-      <span className={style[className]}>
-        <i className="fas fa-star"></i>
-      </span>
+      <div className={style[className]}>
+        <i className={`material-icons ${style.star}`}>star</i>
+      </div>
     );
   });
 
@@ -19,7 +19,7 @@ const ReviewHeader = (props) => {
   const dateString = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
 
   return (
-    <div className="review-header">
+    <div>
       {divStars}<span className={style.date}>{dateString}</span>
     </div>
   );
