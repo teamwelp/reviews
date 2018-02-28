@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReviewList from '../../client/src/components/review_list';
-import ReviewListEntry from '../../client/src/components/review_list';
 
 describe('test ReviewList component', () => {
   const reviews = Array(4).fill({

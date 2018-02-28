@@ -13,7 +13,7 @@ const UserStats = (props) => {
       iconName: 'star',
     },
     {
-      label: 'friends',
+      label: 'photos',
       iconName: 'camera_alt',
     },
   ];
@@ -22,7 +22,7 @@ const UserStats = (props) => {
     return (
       <div className={style.statContainer}>
         <i className={`material-icons ${style.sidebarIcons}`}>{stat.iconName}</i>
-        <span className={style.figures}>{`${stat.label} ${props.stats.photos}`}</span>
+        <span className={style.figures} id={stat.label}>{`${stat.label} ${props.stats[stat.label]}`}</span>
       </div>
     );
   });
