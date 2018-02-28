@@ -5,7 +5,9 @@ import style from './styles/review_wrapper_style.css';
 const ReviewHeader = (props) => {
   const stars = Array(5);
 
-  stars.fill('redStar', 0, props.rating);
+  const starColor = props.rating < 5 ? 'orangeStar' : 'redStar';
+
+  stars.fill(starColor, 0, props.rating);
   stars.fill('grayStar', props.rating);
 
   const divStars = stars.map((className) => {

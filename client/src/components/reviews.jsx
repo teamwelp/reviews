@@ -9,7 +9,7 @@ class Reviews extends React.Component {
     this.state = {
       reviews: mockReviews,
       businessId: 200,
-      businessName: 'lorem',
+      businessName: 'Sample Business',
     };
   }
 
