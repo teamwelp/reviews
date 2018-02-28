@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UserStats from './user_stats';
-import style from './styles/side_bar_style.css';
+import SidebarOptions from './sidebar_options';
+import style from './styles/sidebar_style.css';
 
 const Sidebar = (props) => {
   return (
-    <div className={style.sideBar}>
-      <div className="passport">
+    <div className={style.sidebar}>
+      <div className={style.passportContainer}>
         <img className={style.avatar} src={props.user.image} alt="hello"></img>
         <div className={style.userInfo}>
           <a className={style.username} href="/">{props.user.username}</a>
@@ -14,6 +15,7 @@ const Sidebar = (props) => {
           <UserStats stats={props.user} />
         </div>
       </div>
+      <SidebarOptions username={props.user.username} />
     </div>
   );
 };

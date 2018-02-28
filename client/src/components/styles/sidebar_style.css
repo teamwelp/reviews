@@ -6,7 +6,7 @@
   margin-right: 10px;
 }
 
-.sideBar {
+.sidebar {
   float: left;
   width: 217.125px;
   height: 222px;
@@ -29,7 +29,7 @@
   float:left;
 }
 
-.sideBarIcons {
+.sidebarIcons {
   font-size: 15px;
   margin-right: 5px;
   color: #f15c00;
@@ -46,4 +46,40 @@
   vertical-align: middle;
   line-height: 16px;
   height: 16px;
+}
+
+.optionContainer {
+  color: #0073bb;
+  width: 217px;
+}
+
+.sidebarOptionIcon {
+  font-size: 14px;
+  width: 18px;
+  height: 19px;
+  padding: 3px 6px 3px 0;
+  float: left;
+  line-height: 19px;
+}
+
+.sidebarOptionLabel {
+  width: 187px;
+  height: 19px;
+  padding: 3px 0;
+  font-weight: bold;
+  font-size: 12px;
+  border-bottom: 1px solid #e6e6e6;
+  float: left;
+  line-height: 19px;
+}
+
+.passportContainer {
+  width: 217px;
+  overflow: auto;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.noBorder {
+  border-bottom-style: none;
 }
