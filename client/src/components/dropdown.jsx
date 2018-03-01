@@ -45,7 +45,7 @@ class Dropdown extends React.Component {
           {this.state.selected}
           <div className={style[this.state.menuClassNames[this.state.showMenu]]}>{selectionDivs}</div>
         </div>
-        <i class={`material-icons ${style.icon}`}>arrow_drop_down</i>
+        <i className={`material-icons ${style.icon}`}>arrow_drop_down</i>
       </div>
     );
   }

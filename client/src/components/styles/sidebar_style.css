@@ -55,6 +55,15 @@
   cursor: pointer;
 }
 
+.showContainer {
+  overflow: auto;
+  display: block;
+}
+
+.hideContainer {
+  display: none;
+}
+
 .sidebarOptionIcon {
   font-size: 14px;
   width: 18px;
@@ -73,6 +82,10 @@
   border-bottom: 1px solid #e6e6e6;
   float: left;
   line-height: 19px;
+}
+
+.sidebarOptionLabel:hover {
+  text-decoration: underline;
 }
 
 .passportContainer {

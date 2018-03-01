@@ -15,7 +15,7 @@ const Sidebar = (props) => {
           <UserStats stats={props.user} />
         </div>
       </div>
-      <SidebarOptions username={props.user.username} />
+      <SidebarOptions username={props.user.username} showOptions={props.showOptions} />
     </div>
   );
 };

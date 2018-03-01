@@ -27,6 +27,8 @@ const sidebarOptions = (props) => {
     },
   ];
 
+  const containerClassName = props.showOptions ? style.showContainer : style.hideContainer;
+
   const optionDivs = options.map((option) => {
     const border = option.noBorder ? style.noBorder : '';
     return (
@@ -37,7 +39,7 @@ const sidebarOptions = (props) => {
     );
   });
 
-  return (<div>{optionDivs}</div>);
+  return (<div className={containerClassName}>{optionDivs}</div>);
 };
 
 export default sidebarOptions;
