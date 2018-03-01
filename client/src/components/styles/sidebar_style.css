@@ -4,6 +4,7 @@
   border-radius: 4px;
   float: left;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .sidebar {
@@ -51,6 +52,7 @@
 .optionContainer {
   color: #0073bb;
   width: 217px;
+  cursor: pointer;
 }
 
 .sidebarOptionIcon {

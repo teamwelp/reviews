@@ -5,6 +5,7 @@
   color: #666;
   margin-right: 30px;
   position: relative;
+  cursor: pointer;
 }
 
 .label {
@@ -30,7 +31,6 @@
   width: 100%;
   box-sizing: border-box;
   left: 0%;
-  /*padding: 0 10px;*/
   border-radius: 3px;
   border: 1px solid #e6e6e6;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);

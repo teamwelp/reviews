@@ -18,6 +18,7 @@
   background: linear-gradient(#d90007, #c91400);
   float: left;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .container {
