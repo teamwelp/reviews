@@ -31,11 +31,7 @@ const UserStats = (props) => {
 };
 
 UserStats.propTypes = {
-  stats: PropTypes.object,
-};
-
-UserStats.defaultProps = {
-  stats: {},
+  stats: PropTypes.object.isRequired,
 };
 
 export default UserStats;

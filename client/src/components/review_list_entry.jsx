@@ -35,11 +35,7 @@ class ReviewListEntry extends React.Component {
 }
 
 ReviewListEntry.propTypes = {
-  review: PropTypes.object,
-};
-
-ReviewListEntry.defaultProps = {
-  review: {},
+  review: PropTypes.object.isRequired,
 };
 
 export default ReviewListEntry;

@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Dropdown from './dropdown';
 import style from './styles/display_settings_style.css';
 
-const DisplaySettings = (props) => {
+const DisplaySettings = () => {
   const sortSelection = {
     selection: ['Yelp Sort', 'Newest First', 'Oldest First', 'Highest Rated', 'Lowest Rated'],
-    label: 'Sort by'
+    label: 'Sort by',
   };
 
   const languageSort = {

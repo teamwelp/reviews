@@ -15,11 +15,7 @@ const ReviewWrapper = (props) => {
 };
 
 ReviewWrapper.propTypes = {
-  review: PropTypes.object,
-};
-
-ReviewWrapper.defaultProps = {
-  review: {},
+  review: PropTypes.object.isRequired,
 };
 
 export default ReviewWrapper;

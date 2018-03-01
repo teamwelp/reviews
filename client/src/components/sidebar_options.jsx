@@ -42,4 +42,9 @@ const sidebarOptions = (props) => {
   return (<div className={containerClassName}>{optionDivs}</div>);
 };
 
+sidebarOptions.propTypes = {
+  username: PropTypes.string.isRequired,
+  showOptions: PropTypes.bool.isRequired,
+};
+
 export default sidebarOptions;

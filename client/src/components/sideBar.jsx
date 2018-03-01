@@ -21,11 +21,7 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  user: PropTypes.object,
-};
-
-Sidebar.defaultProps = {
-  user: {},
+  user: PropTypes.object.isRequired,
 };
 
 export default Sidebar;

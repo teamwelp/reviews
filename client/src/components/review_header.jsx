@@ -29,13 +29,8 @@ const ReviewHeader = (props) => {
 };
 
 ReviewHeader.propTypes = {
-  rating: PropTypes.number,
-  date: PropTypes.string,
-};
-
-ReviewHeader.defaultProps = {
-  rating: 0,
-  date: null,
+  rating: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default ReviewHeader;
