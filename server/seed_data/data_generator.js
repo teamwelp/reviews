@@ -29,8 +29,8 @@ for (let i = 0; i < businesses.length; i += 1) {
       },
       businessRating: Math.floor(Math.random() * 5) + 1,
       dateCreated: faker.date.past(),
-      text: faker.lorem.sentences(),
-      image: 'http://lorempixel.com/400/200/food',
+      text: faker.lorem.paragraph(),
+      image: faker.image.avatar(),
       reviewRating: {
         useful: faker.random.number({
           min: 2,

@@ -20,10 +20,9 @@
   },
   "scripts": {
     "start": "webpack -w",
-    "test": "jest --coverage",
+    "test": "jest --coverage --forceExit",
     "seed": "node server/seed_data/addDataToDB.js",
-    "server": "nodemon server/server.js",
-    "test": "jest --coverage --forceExit"
+    "server": "nodemon server/server.js"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -56,7 +55,6 @@
     "react-test-renderer": "^16.2.0",
     "faker": "^4.1.0",
     "file-system": "^2.2.2",
-    "jest": "^22.4.2",
     "nodemon": "^1.15.1",
     "supertest": "^3.0.0",
     "webpack": "^3.11.0",
