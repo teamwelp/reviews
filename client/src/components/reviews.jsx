@@ -11,7 +11,7 @@ class Reviews extends React.Component {
     this.state = {
       reviews: null,
       businessName: 'Sample Business',
-      reviewCount: null,
+      reviewCount: 0,
       currentPage: 1,
       sortBy: 'newest',
     };
@@ -65,7 +65,7 @@ class Reviews extends React.Component {
           <span className={style.title}>Recommended Reviews for </span>
           <span className={style.businessName}>{this.state.businessName}</span>
         </div>
-        <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} />
+        <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} reviewCount={this.state.reviewCount} />
         <ReviewList reviews={this.state.reviews} />
         <Pagination reviewCount={this.state.reviewCount} currentPage={this.state.currentPage} clickPage={page => this.handleClickPage(page)} />
       </div>

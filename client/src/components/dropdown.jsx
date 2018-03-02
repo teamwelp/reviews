@@ -7,7 +7,7 @@ class Dropdown extends React.Component {
     super(props);
 
     this.state = {
-      selected: this.props.selection[0],
+      selected: `${this.props.selection[0]}${props.reviewCount}`,
       menuClassNames: { true: 'showMenu', false: 'hideMenu' },
       showMenu: false,
       hovered: null,
@@ -60,10 +60,12 @@ Dropdown.propTypes = {
   label: PropTypes.string.isRequired,
   selection: PropTypes.array.isRequired,
   clickHandler: PropTypes.func,
+  reviewCount: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   clickHandler: () => null,
+  reviewCount: '',
 };
 
 export default Dropdown;

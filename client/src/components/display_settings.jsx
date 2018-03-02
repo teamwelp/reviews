@@ -21,7 +21,7 @@ const DisplaySettings = (props) => {
         <i className={`material-icons ${style.searchIcon}`}>search</i>
       </button>
       <Dropdown selection={sortSelection.selection} label={sortSelection.label} clickHandler={props.clickSort} />
-      <Dropdown selection={languageSort.selection} label={languageSort.label} />
+      <Dropdown selection={languageSort.selection} label={languageSort.label} reviewCount={` (${props.reviewCount})`} />
     </div>
 
   );
@@ -29,7 +29,7 @@ const DisplaySettings = (props) => {
 
 DisplaySettings.propTypes = {
   clickSort: PropTypes.func.isRequired,
+  reviewCount: PropTypes.number.isRequired,
 };
 
 export default DisplaySettings;
-
