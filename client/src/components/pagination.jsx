@@ -4,7 +4,12 @@ import style from './styles/pagination_style.css';
 
 const Pagination = (props) => {
   const pages = Math.ceil(props.reviewCount / 20);
-  const pageDivs = Array(pages).fill(null).map((element, i) => (<span onClick={e => props.clickPage(i + 1)} className={style.page}>{i + 1}</span>));
+  const pageDivs = Array(pages).fill(null).map((element, i) => {
+    const pageStyle = i + 1 === props.currentPage ? style.currentPage : style.page;
+    return (
+      <span onClick={e => props.clickPage(i + 1)} className={pageStyle}>{i + 1}</span>
+    );
+  });
   let previous = null;
   let next = null;
 

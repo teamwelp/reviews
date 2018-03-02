@@ -30,6 +30,15 @@
   cursor: pointer;
 }
 
+.currentPage {
+  float: left;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  cursor: pointer;
+  border-bottom: 3px solid #d32323;
+}
+
 .nextPage:hover, .previousPage:hover, .page:hover {
   text-decoration: underline;
 }
