@@ -10,7 +10,7 @@ const reviewSchema = mongoose.Schema({
   businessRating: Number,
   dateCreated: Date,
   text: String,
-  image: String,
+  images: [String],
   reviewRating: {
     useful: Number,
     funny: Number,
@@ -21,18 +21,26 @@ const reviewSchema = mongoose.Schema({
 const userSchema = mongoose.Schema({
   userId: { type: Number, unique: true },
   username: String,
+  location: String,
   image: String,
   friends: Number,
   reviews: Number,
   photos: Number,
 });
 
+const businessSchema = mongoose.Schema({
+  businessId: { type: Number, unique: true },
+  businessName: String,
+});
+
 const ReviewModel = mongoose.model('Review', reviewSchema);
 const UserModel = mongoose.model('User', userSchema);
+const BusinessModel = mongoose.model('Business', businessSchema);
 
 const models = {
   reviews: ReviewModel,
   users: UserModel,
+  businesses: BusinessModel,
 };
 
 // Database Methods
