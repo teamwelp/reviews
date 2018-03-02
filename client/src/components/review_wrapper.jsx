@@ -8,7 +8,7 @@ const ReviewWrapper = (props) => {
   return (
     <div className={style.reviewWrapper}>
       <ReviewHeader rating={props.review.businessRating} date={props.review.dateCreated} />
-      <div className={style.reviewText}>{props.review.text}</div>
+      <div className={style.reviewText}>{props.review.text.replace('\n', '\n\n')}</div>
       <Votes votes={props.review.reviewRating} />
     </div>
   );
