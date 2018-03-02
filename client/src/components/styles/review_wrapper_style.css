@@ -65,3 +65,23 @@
   line-height: 16px;
   padding-left: 1px;
 }
+
+.firstImage {
+  width: 348px;
+  height: 348px;
+  margin: 0 12px 12px 0;
+  border-radius: 4px;
+}
+
+.otherImage {
+  width: 168px;
+  height: 168px;
+  margin-right: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.imageContainer {
+  overflow: auto;
+  cursor: pointer;
+}

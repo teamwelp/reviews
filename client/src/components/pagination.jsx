@@ -41,4 +41,9 @@ const Pagination = (props) => {
   );
 };
 
+Pagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  reviewCount: PropTypes.number.isRequired,
+};
+
 export default Pagination;

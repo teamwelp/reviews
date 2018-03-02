@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import style from './styles/review_wrapper_style.css';
 import Votes from './votes';
 import ReviewHeader from './review_header';
+import Pictures from './pictures';
 
 const ReviewWrapper = (props) => {
   return (
     <div className={style.reviewWrapper}>
       <ReviewHeader rating={props.review.businessRating} date={props.review.dateCreated} />
       <div className={style.reviewText}>{props.review.text.replace('\n', '\n\n')}</div>
+      <Pictures images={props.review.images} />
       <Votes votes={props.review.reviewRating} />
     </div>
   );
@@ -16,6 +18,11 @@ const ReviewWrapper = (props) => {
 
 ReviewWrapper.propTypes = {
   review: PropTypes.object.isRequired,
+  images: PropTypes.array,
+};
+
+ReviewWrapper.defaultTypes = {
+  images: [],
 };
 
 export default ReviewWrapper;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import ReviewList from './review_list';
 import style from './styles/reviews_style.css';
@@ -62,12 +63,10 @@ class Reviews extends React.Component {
     if (this.state.reviews === null) {
       return null;
     }
-
     let feedStyle = style.feed;
     if (this.state.loading) {
       feedStyle += ` ${style.transparentFeed}`;
     }
-
     return (
       <div className={feedStyle}>
         <div className={style.titleContainer}>
@@ -81,5 +80,10 @@ class Reviews extends React.Component {
     );
   }
 }
+
+Reviews.propTypes = {
+  businessName: PropTypes.string.isRequired,
+  businessId: PropTypes.string.isRequired,
+};
 
 export default Reviews;
