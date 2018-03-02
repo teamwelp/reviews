@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import mockReviews from '../../dummy_data/mock_reviews';
 import ReviewList from './review_list';
 import style from './styles/reviews_style.css';
 import DisplaySettings from './display_settings';
@@ -12,7 +11,7 @@ class Reviews extends React.Component {
     this.state = {
       reviews: null,
       businessName: 'Sample Business',
-      reviewCount: 100,
+      reviewCount: null,
       currentPage: 1,
       sortBy: 'newest',
     };
@@ -23,20 +22,32 @@ class Reviews extends React.Component {
     this.getReviewCount();
   }
 
+  getReviewCount() {
+    axios.get(`/businesses/${this.props.businessId}/reviews/count`).then((response) => {
+      this.setState({ reviewCount: response.data.count });
+    });
+  }
+
   retrieveData() {
     const sortBy = `sortBy=${this.state.sortBy}`;
     const startAt = `startAt=${(this.state.currentPage - 1) * 20}`;
-
 
     axios.get(`/businesses/${this.props.businessId}/reviews?${sortBy}&${startAt}`).then((response) => {
       this.setState({ reviews: response.data });
     });
   }
 
-  getReviewCount() {
-    axios.get(`/businesses/${this.props.businessId}/reviews/count`).then((response) => {
-      this.setState({ reviewCount: response.data.count });
-    });
+  handleClickSort(sortQuery) {
+    const sortQueries = {
+      'Newest First': 'newest',
+      'Oldest First': 'oldest',
+      'Highest Rated': 'highestRated',
+      'Lowest Rated': 'lowestRated',
+    };
+
+    this.setState({
+      sortBy: sortQueries[sortQuery],
+    }, () => this.retrieveData());
   }
 
   handleClickPage(page) {
@@ -54,9 +65,9 @@ class Reviews extends React.Component {
           <span className={style.title}>Recommended Reviews for </span>
           <span className={style.businessName}>{this.state.businessName}</span>
         </div>
-        <DisplaySettings />
+        <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} />
         <ReviewList reviews={this.state.reviews} />
-        <Pagination reviewCount={this.state.reviewCount} currentPage={this.state.currentPage} clickPage={(page) => this.handleClickPage(page)} />
+        <Pagination reviewCount={this.state.reviewCount} currentPage={this.state.currentPage} clickPage={page => this.handleClickPage(page)} />
       </div>
     );
   }

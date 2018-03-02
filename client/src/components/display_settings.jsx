@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dropdown from './dropdown';
 import style from './styles/display_settings_style.css';
 
-const DisplaySettings = () => {
+const DisplaySettings = (props) => {
   const sortSelection = {
     selection: ['Newest First', 'Oldest First', 'Highest Rated', 'Lowest Rated'],
     label: 'Sort by',
@@ -19,11 +20,15 @@ const DisplaySettings = () => {
       <button className={style.searchButton}>
         <i className={`material-icons ${style.searchIcon}`}>search</i>
       </button>
-      <Dropdown selection={sortSelection.selection} label={sortSelection.label} />
+      <Dropdown selection={sortSelection.selection} label={sortSelection.label} clickHandler={props.clickSort} />
       <Dropdown selection={languageSort.selection} label={languageSort.label} />
     </div>
 
   );
+};
+
+DisplaySettings.propTypes = {
+  clickSort: PropTypes.func.isRequired,
 };
 
 export default DisplaySettings;

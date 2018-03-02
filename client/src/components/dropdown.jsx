@@ -16,15 +16,20 @@ class Dropdown extends React.Component {
 
   toggleMenu() {
     const showMenu = !this.state.showMenu;
-    this.setState({
-      showMenu: showMenu,
-    });
+    this.setState({ showMenu });
   }
 
-  handleHover(e, item) {
+  handleHover(item) {
     this.setState({
       hovered: item,
     });
+  }
+
+  handleClick(item) {
+    this.setState({
+      selected: item,
+    });
+    this.props.clickHandler(item);
   }
 
   render() {
@@ -35,7 +40,7 @@ class Dropdown extends React.Component {
       } else {
         className = 'noHighlight';
       }
-      return (<div className={style[className]} key={item} onMouseEnter={e => this.handleHover(e, item)}>{item}</div>);
+      return (<div className={style[className]} key={item} onMouseEnter={() => this.handleHover(item)} onClick={() => this.handleClick(item)} >{item}</div>);
     });
 
     return (
@@ -54,6 +59,11 @@ class Dropdown extends React.Component {
 Dropdown.propTypes = {
   label: PropTypes.string.isRequired,
   selection: PropTypes.array.isRequired,
+  clickHandler: PropTypes.func,
+};
+
+Dropdown.defaultProps = {
+  clickHandler: () => null,
 };
 
 export default Dropdown;
