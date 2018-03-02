@@ -4,7 +4,7 @@ import style from './styles/display_settings_style.css';
 
 const DisplaySettings = () => {
   const sortSelection = {
-    selection: ['Yelp Sort', 'Newest First', 'Oldest First', 'Highest Rated', 'Lowest Rated'],
+    selection: ['Newest First', 'Oldest First', 'Highest Rated', 'Lowest Rated'],
     label: 'Sort by',
   };
 

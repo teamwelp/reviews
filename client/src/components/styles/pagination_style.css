@@ -1,0 +1,40 @@
+.reviewCount {
+
+}
+
+.container {
+  width: 680px;
+  margin: 0 10px;
+  height: 30px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.text {
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  float: left;
+}
+
+.pageContainer {
+  float: right;
+  padding: 0 10px;
+  color: #0073bb;
+}
+
+.nextPage, .previousPage, .page {
+  float: left;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.nextPage:hover, .previousPage:hover, .page:hover {
+  text-decoration: underline;
+}
+
+.icons {
+  padding: 0 10px;
+  font-size: 1.25em;
+}

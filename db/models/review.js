@@ -38,9 +38,12 @@ const models = {
 // Database Methods
 const insertData = (dbModel, data) => new models[dbModel](data).save();
 
-const retrieveData = (dbModel, query) => models[dbModel].find(query).lean().exec();
+const retrieveData = (dbModel, query, sortBy) => models[dbModel].find(query).lean().sort(sortBy).exec();
+
+const countData = (dbModel, query) => models[dbModel].count(query).exec();
 
 module.exports.insertData = insertData;
 module.exports.retrieveData = retrieveData;
+module.exports.countData = countData;
 module.exports.models = models;
 

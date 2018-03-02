@@ -1,17 +1,18 @@
 const db = require('../../db/models/review.js');
 
-const addUsersToReviews = (reviews) => {
+const addUsersToReviews = (reviews, startAt) => {
   let userPromise;
   const userPromises = [];
-  for (let i = 0; i < reviews.length; i += 1) {
-    userPromise = db.retrieveData('users', { userId: reviews[i].user.userId })
+  const slicedReviews = reviews.slice(startAt, startAt + 21);
+  for (let i = 0; i < slicedReviews.length; i += 1) {
+    userPromise = db.retrieveData('users', { userId: slicedReviews[i].user.userId })
       .then(user => user[0])
       .catch(() => 'user not found');
     userPromises.push(userPromise);
   }
   return Promise.all(userPromises)
     .then((users) => {
-      const updatedReviews = reviews;
+      const updatedReviews = slicedReviews;
       for (let i = 0; i < users.length; i += 1) {
         updatedReviews[i].user = users[i];
       }
@@ -19,4 +20,15 @@ const addUsersToReviews = (reviews) => {
     });
 };
 
+const getQueryForSort = (sortBy) => {
+  const queries = {
+    newest: { dateCreated: -1 },
+    oldest: { dateCreated: 1 },
+    highestRated: { businessRating: -1 },
+    lowestRated: { businessRating: 1 },
+  };
+  return queries[sortBy];
+};
+
 module.exports.addUsersToReviews = addUsersToReviews;
+module.exports.getQueryForSort = getQueryForSort;

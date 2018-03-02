@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Reviews from './src/components/reviews.jsx';
+import PropTypes from 'prop-types';
+import Reviews from './src/components/reviews';
 
-const App = () => <Reviews />;
+const id = document.getElementById('app').dataset.businessId;
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const App = props => <Reviews businessId={props.businessId} />;
 
+App.propTypes = {
+  businessId: PropTypes.string.isRequired,
+};
+
+ReactDOM.render(<App businessId={id} />, document.getElementById('app'));
