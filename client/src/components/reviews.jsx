@@ -10,7 +10,6 @@ class Reviews extends React.Component {
     super(props);
     this.state = {
       reviews: null,
-      businessName: 'Sample Business',
       reviewCount: 0,
       currentPage: 1,
       sortBy: 'newest',
@@ -58,12 +57,13 @@ class Reviews extends React.Component {
     if (this.state.reviews === null) {
       return null;
     }
+    console.log(this.props)
 
     return (
       <div className={style.feed}>
         <div className={style.titleContainer}>
           <span className={style.title}>Recommended Reviews for </span>
-          <span className={style.businessName}>{this.state.businessName}</span>
+          <span className={style.businessName}>{this.props.businessName}</span>
         </div>
         <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} reviewCount={this.state.reviewCount} />
         <ReviewList reviews={this.state.reviews} />

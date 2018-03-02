@@ -6,7 +6,10 @@ const router = express.Router();
 
 router.route('/:businessId')
   .get((req, res) => {
-    res.render('index', { businessId: req.params.businessId });
+    db.retrieveData('businesses', { businessId: req.params.businessId })
+      .then((businessInfo) => {
+        res.render('index', { businessId: req.params.businessId, businessName: businessInfo[0].businessName });
+      });
   });
 
 router.route('/:businessId/reviews')

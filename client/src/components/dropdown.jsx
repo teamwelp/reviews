@@ -7,7 +7,7 @@ class Dropdown extends React.Component {
     super(props);
 
     this.state = {
-      selected: `${this.props.selection[0]}${props.reviewCount}`,
+      selected: `${this.props.selection[0]}${this.props.reviewCount}`,
       menuClassNames: { true: 'showMenu', false: 'hideMenu' },
       showMenu: false,
       hovered: null,
@@ -27,13 +27,13 @@ class Dropdown extends React.Component {
 
   handleClick(item) {
     this.setState({
-      selected: item,
+      selected: `${item}${this.props.reviewCount}`,
     });
     this.props.clickHandler(item);
   }
 
   render() {
-    const selectionDivs = this.props.selection.map((item, index) => {
+    const selectionDivs = this.props.selection.map((item) => {
       let className;
       if (item === this.state.selected || item === this.state.hovered) {
         className = 'highlight';
