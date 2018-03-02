@@ -11,6 +11,6 @@ mongoose.connect('mongodb://localhost/welp');
 
 app.use(express.static(path.join(__dirname, '/../public')));
 
-app.use('/businesses', reviewRouter);
+app.use('/biz', reviewRouter);
 
 module.exports = app;

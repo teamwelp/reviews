@@ -32,7 +32,7 @@ describe('test reviews route', () => {
   let response;
 
   beforeAll(async () => {
-    response = await request(app).get('/businesses/200/reviews');
+    response = await request(app).get('/biz/200/reviews');
   });
 
   test('it should return business reviews from database', async () => {
@@ -59,7 +59,7 @@ describe('test reviews route', () => {
 });
 
 describe('test error handler of reviews route', async () => {
-  const response = await request(app).get('/businesses/xxxx/reviews');
+  const response = await request(app).get('/biz/xxxx/reviews');
 
   test('it should return a 500 status code for non-existent business id', async () => {
     expect(response.statusCode).toBe(500);

@@ -23,7 +23,7 @@ class Reviews extends React.Component {
   }
 
   getReviewCount() {
-    axios.get(`/businesses/${this.props.businessId}/reviews/count`).then((response) => {
+    axios.get(`/biz/${this.props.businessId}/reviews/count`).then((response) => {
       this.setState({ reviewCount: response.data.count, loading: false });
     });
   }
@@ -32,7 +32,7 @@ class Reviews extends React.Component {
     const sortBy = `sortBy=${this.state.sortBy}`;
     const startAt = `startAt=${(this.state.currentPage - 1) * 20}`;
 
-    axios.get(`/businesses/${this.props.businessId}/reviews?${sortBy}&${startAt}`).then((response) => {
+    axios.get(`/biz/${this.props.businessId}/reviews?${sortBy}&${startAt}`).then((response) => {
       this.setState({ reviews: response.data, loading: false });
     });
   }
