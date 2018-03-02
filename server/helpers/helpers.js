@@ -3,7 +3,7 @@ const db = require('../../db/models/review.js');
 const addUsersToReviews = (reviews, startAt) => {
   let userPromise;
   const userPromises = [];
-  const slicedReviews = reviews.slice(startAt, startAt + 21);
+  const slicedReviews = reviews.slice(Number(startAt), Number(startAt) + 20);
   for (let i = 0; i < slicedReviews.length; i += 1) {
     userPromise = db.retrieveData('users', { userId: slicedReviews[i].user.userId })
       .then(user => user[0])

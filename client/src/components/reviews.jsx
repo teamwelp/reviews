@@ -50,14 +50,15 @@ class Reviews extends React.Component {
   }
 
   handleClickPage(page) {
-
+    this.setState({
+      currentPage: page,
+    }, () => this.retrieveData());
   }
 
   render() {
     if (this.state.reviews === null) {
       return null;
     }
-    console.log(this.props)
 
     return (
       <div className={style.feed}>
