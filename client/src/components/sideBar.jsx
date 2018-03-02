@@ -11,7 +11,7 @@ const Sidebar = (props) => {
         <img className={style.avatar} src={props.user.image} alt="hello"></img>
         <div className={style.userInfo}>
           <a className={style.username} href="/">{props.user.username}</a>
-          <div className={style.userLocation}>San Leandro, CA</div>
+          <div className={style.userLocation}>{props.user.location}</div>
           <UserStats stats={props.user} />
         </div>
       </div>

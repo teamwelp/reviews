@@ -14,7 +14,7 @@ for (let i = 0; i < users.length; i += 1) {
     friends: faker.random.number({ max: 100 }),
     reviews: faker.random.number({ max: 100 }),
     photos: faker.random.number({ max: 100 }),
-    location: faker.fake('{{address.city}}, {{address.state}}'),
+    location: faker.fake('{{address.city}}, {{address.stateAbbr}}'),
   });
 }
 
@@ -30,7 +30,7 @@ for (let i = 0; i < businesses.length; i += 1) {
       },
       businessRating: Math.floor(Math.random() * 5) + 1,
       dateCreated: faker.date.past(),
-      text: faker.lorem.paragraph(),
+      text: faker.lorem.paragraphs(),
       images: Array(Math.floor(Math.random() * 5)).fill(null).map(() => faker.image.food()),
       reviewRating: {
         useful: faker.random.number({
