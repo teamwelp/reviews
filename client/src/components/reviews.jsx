@@ -13,6 +13,7 @@ class Reviews extends React.Component {
       reviewCount: 0,
       currentPage: 1,
       sortBy: 'newest',
+      loading: true,
     };
   }
 
@@ -23,7 +24,7 @@ class Reviews extends React.Component {
 
   getReviewCount() {
     axios.get(`/businesses/${this.props.businessId}/reviews/count`).then((response) => {
-      this.setState({ reviewCount: response.data.count });
+      this.setState({ reviewCount: response.data.count, loading: false });
     });
   }
 
@@ -32,7 +33,7 @@ class Reviews extends React.Component {
     const startAt = `startAt=${(this.state.currentPage - 1) * 20}`;
 
     axios.get(`/businesses/${this.props.businessId}/reviews?${sortBy}&${startAt}`).then((response) => {
-      this.setState({ reviews: response.data });
+      this.setState({ reviews: response.data, loading: false });
     });
   }
 
@@ -46,12 +47,14 @@ class Reviews extends React.Component {
 
     this.setState({
       sortBy: sortQueries[sortQuery],
+      loading: true,
     }, () => this.retrieveData());
   }
 
   handleClickPage(page) {
     this.setState({
       currentPage: page,
+      loading: true,
     }, () => this.retrieveData());
   }
 
@@ -60,8 +63,13 @@ class Reviews extends React.Component {
       return null;
     }
 
+    let feedStyle = style.feed;
+    if (this.state.loading) {
+      feedStyle += ` ${style.transparentFeed}`;
+    }
+
     return (
-      <div className={style.feed}>
+      <div className={feedStyle}>
         <div className={style.titleContainer}>
           <span className={style.title}>Recommended Reviews for </span>
           <span className={style.businessName}>{this.props.businessName}</span>

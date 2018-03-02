@@ -3,6 +3,7 @@
   float: left;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
+  position: relative;
 }
 
 .title {
@@ -17,4 +18,18 @@
 
 .titleContainer {
   padding-bottom: 8px;
+}
+
+.transparentFeed {
+  opacity: 0.5;
+}
+
+.loadingIcon {
+  z-index: 1;
+  position: sticky;
+  top: 50%;
+  left: 350px;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: 100%;
 }
