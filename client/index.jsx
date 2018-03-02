@@ -6,7 +6,7 @@ import Reviews from './src/components/reviews';
 const id = document.getElementById('app').dataset.businessId;
 const name = document.getElementById('app').dataset.businessName;
 
-const App = props => <Reviews businessId={props.businessId} businessName={props.businessName}/>;
+const App = props => <Reviews businessId={props.businessId} businessName={props.businessName} />;
 
 App.propTypes = {
   businessId: PropTypes.string.isRequired,
