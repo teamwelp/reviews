@@ -14,7 +14,11 @@ router.route('/:businessId')
 
 router.route('/:businessId/reviews')
   .get((req, res) => {
-    db.retrieveData('reviews', { businessId: req.params.businessId }, helpers.getQueryForSort(req.query.sortBy))
+    const searchQuery = { businessId: req.params.businessId };
+    if (req.query.search !== undefined) {
+      searchQuery.$text = { $search: req.query.search };
+    }
+    db.retrieveData('reviews', searchQuery, helpers.getQueryForSort(req.query.sortBy))
       .then(reviews => helpers.addUsersToReviews(reviews, req.query.startAt))
       .then(updatedReviews => res.send(updatedReviews))
       .catch(error => res.status(500).send(error));
@@ -22,7 +26,11 @@ router.route('/:businessId/reviews')
 
 router.route('/:businessId/reviews/count')
   .get((req, res) => {
-    db.countData('reviews', { businessId: req.params.businessId })
+    const searchQuery = { businessId: req.params.businessId };
+    if (req.query.search !== undefined) {
+      searchQuery.$text = { $search: req.query.search };
+    }
+    db.countData('reviews', searchQuery)
       .then((count) => {
         res.send({ count });
       })

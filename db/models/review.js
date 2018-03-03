@@ -28,6 +28,10 @@ const userSchema = mongoose.Schema({
   photos: Number,
 });
 
+reviewSchema.index({
+  text: 'text',
+});
+
 const businessSchema = mongoose.Schema({
   businessId: { type: Number, unique: true },
   businessName: String,

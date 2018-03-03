@@ -1,6 +1,6 @@
 const db = require('../../db/models/review.js');
 
-const addUsersToReviews = (reviews, startAt) => {
+const addUsersToReviews = (reviews, startAt = 0) => {
   let userPromise;
   const userPromises = [];
   const slicedReviews = reviews.slice(Number(startAt), Number(startAt) + 20);
@@ -20,7 +20,7 @@ const addUsersToReviews = (reviews, startAt) => {
     });
 };
 
-const getQueryForSort = (sortBy) => {
+const getQueryForSort = (sortBy = 'newest') => {
   const queries = {
     newest: { dateCreated: -1 },
     oldest: { dateCreated: 1 },

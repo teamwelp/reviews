@@ -7,7 +7,7 @@ class Dropdown extends React.Component {
     super(props);
 
     this.state = {
-      selected: `${this.props.selection[0]}${this.props.reviewCount}`,
+      selected: this.props.selection[0],
       menuClassNames: { true: 'showMenu', false: 'hideMenu' },
       showMenu: false,
       hovered: null,
@@ -27,7 +27,7 @@ class Dropdown extends React.Component {
 
   handleClick(item) {
     this.setState({
-      selected: `${item}${this.props.reviewCount}`,
+      selected: item,
     });
     this.props.clickHandler(item);
   }
@@ -47,7 +47,7 @@ class Dropdown extends React.Component {
       <div className={style.container} onClick={() => this.toggleMenu()}>
         <div className={style.label}>{this.props.label}</div>
         <div className={style.selected}>
-          {this.state.selected}
+          {`${this.state.selected}${this.props.reviewCount}`}
           <div className={style[this.state.menuClassNames[this.state.showMenu]]}>{selectionDivs}</div>
         </div>
         <i className={`material-icons ${style.icon}`}>arrow_drop_down</i>
