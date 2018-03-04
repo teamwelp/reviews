@@ -9,8 +9,13 @@
   <link rel="icon" type="image/png" href="/favicon.ico">
 </head>
 <body>
-  <div data-business-id=<%- `"${businessId}"` %> data-business-name=<%- `"${businessName}"` %>  id="app"></div>
+  <div id="reviews"> </div>
 
-<script src="/dist/bundle.js"></script>
+
+  <script>
+    window.businessId = <%=businessId%>;
+    window.businessName = "<%-businessName%>";
+  </script>
+    <script src="http://localhost:8000/dist/bundle.js"></script>
 </body>
 </html>

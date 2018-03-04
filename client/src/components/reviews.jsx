@@ -127,7 +127,7 @@ class Reviews extends React.Component {
 
 Reviews.propTypes = {
   businessName: PropTypes.string.isRequired,
-  businessId: PropTypes.string.isRequired,
+  businessId: PropTypes.number.isRequired,
 };
 
 export default Reviews;
