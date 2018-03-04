@@ -5,6 +5,7 @@ import ReviewList from './review_list';
 import style from './styles/reviews_style.css';
 import DisplaySettings from './display_settings';
 import Pagination from './pagination';
+import './styles/reset.css';
 
 class Reviews extends React.Component {
   static extend(obj1, obj2) {
@@ -83,10 +84,12 @@ class Reviews extends React.Component {
   }
 
   handleClickPage(page) {
-    this.setState({
-      currentPage: page,
-      loading: true,
-    }, () => this.updateReviewRender());
+    if (page !== this.state.currentPage) {
+      this.setState({
+        currentPage: page,
+        loading: true,
+      }, () => this.updateReviewRender());
+    }
   }
 
   handleSearch(keyword, purpose) {
@@ -112,15 +115,15 @@ class Reviews extends React.Component {
       feedStyle += ` ${style.transparentFeed}`;
     }
     return (
-      <div className={feedStyle}>
-        <div className={style.titleContainer}>
-          <span className={style.title}>Recommended Reviews for </span>
-          <span className={style.businessName}>{this.props.businessName}</span>
+        <div className={feedStyle}>
+          <div className={style.titleContainer}>
+            <span className={style.title}>Recommended Reviews for </span>
+            <span className={style.businessName}>{this.props.businessName}</span>
+          </div>
+          <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} reviewCount={this.state.reviewCount} clickSearch={(keyword, purpose) => this.handleSearch(keyword, purpose)} />
+          <ReviewList reviews={this.state.reviews} />
+          <Pagination reviewCount={this.state.reviewCount} currentPage={this.state.currentPage} clickPage={page => this.handleClickPage(page)} />
         </div>
-        <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} reviewCount={this.state.reviewCount} clickSearch={(keyword, purpose) => this.handleSearch(keyword, purpose)} />
-        <ReviewList reviews={this.state.reviews} />
-        <Pagination reviewCount={this.state.reviewCount} currentPage={this.state.currentPage} clickPage={page => this.handleClickPage(page)} />
-      </div>
     );
   }
 }

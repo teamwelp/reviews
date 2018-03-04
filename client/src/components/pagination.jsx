@@ -16,7 +16,7 @@ const Pagination = (props) => {
   if (props.currentPage > 1) {
     previous = (
       <span className={style.previousPage}>  <span className={style.icons}>{'<'}</span>
-        <span onClick={e => props.clickPage(props.currentPage - 1)}>Previous</span>
+        <span onClick={e => props.clickPage(Math.max(props.currentPage - 1, 1))}>Previous</span>
       </span>
     );
   }
@@ -25,7 +25,7 @@ const Pagination = (props) => {
     next = (
       <span className={style.nextPage}>
         <span className={style.icons}>{'>'}</span>
-        <span onClick={e => props.clickPage(props.currentPage + 1)}>Next</span>
+        <span onClick={e => props.clickPage(Math.min(props.currentPage + 1, pages))}>Next</span>
       </span>
     );
   }
