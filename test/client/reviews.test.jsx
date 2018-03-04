@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Reviews from '../../client/src/components/reviews';
 import ReviewList from '../../client/src/components/review_list';
+import DisplaySettings from '../../client/src/components/display_settings';
+import Pagination from '../../client/src/components/pagination';
 
 describe('test Reviews component', () => {
   const reviewsComponent = shallow(<Reviews />);
@@ -38,6 +40,7 @@ describe('test Reviews component', () => {
   });
 
   const reviewListComponent = reviewsComponent.find(ReviewList);
+  const displaySettingsComponent = reviewsComponent.find(DisplaySettings);
 
   test('should render the business name', () => {
     expect(reviewsComponent.contains(<span className="businessName">foobar</span>)).toBe(true);
@@ -49,6 +52,10 @@ describe('test Reviews component', () => {
 
   test('should pass the reviews state to ReviewList component', () => {
     expect(reviewListComponent.props().reviews).toEqual(reviewsComponent.state().reviews);
+  });
+
+  test('should contain the DisplaySettings component', () => {
+    expect(reviewsComponent.exists(<DisplaySettings />)).toBe(true);
   });
 });
 
