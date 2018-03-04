@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "webpack -w",
-    "test": "jest --coverage --forceExit",
+    "test": "jest  --coverage --forceExit",
     "seed": "node server/seed_data/addDataToDB.js",
     "server": "nodemon server/server.js"
   },

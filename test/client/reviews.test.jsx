@@ -7,7 +7,6 @@ describe('test Reviews component', () => {
   const reviewsComponent = shallow(<Reviews />);
 
   reviewsComponent.setState({
-    businessName: 'foobar',
     reviews: [
       {
         reviewId: 300,
@@ -31,6 +30,11 @@ describe('test Reviews component', () => {
         },
       },
     ],
+  });
+
+  reviewsComponent.setProps({
+    businessId: 201,
+    businessName: 'foobar',
   });
 
   const reviewListComponent = reviewsComponent.find(ReviewList);

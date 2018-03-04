@@ -1,4 +1,4 @@
-const db = require('../../db/models/review.js');
+const db = require('../../db/models/review');
 const mongoose = require('mongoose');
 
 describe('test database methods', () => {

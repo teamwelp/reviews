@@ -32,7 +32,7 @@ describe('test insertDataToDB method (integration test)', () => {
     businessRating: 4,
     dateCreated: testDate,
     text: 'hello world',
-    image: 'image',
+    images: ['foor', 'bar'],
     reviewRating: {
       useful: 300,
       funny: 400,
@@ -62,7 +62,7 @@ describe('test insertDataToDB method (integration test)', () => {
       expect(data[0].businessRating).toBe(testReviewData[0].businessRating);
       expect(data[0].dateCreated).toEqual(testReviewData[0].dateCreated);
       expect(data[0].text).toBe(testReviewData[0].text);
-      expect(data[0].image).toBe(testReviewData[0].image);
+      expect(data[0].images).toEqual(testReviewData[0].images);
       expect(data[0].reviewRating.useful).toBe(testReviewData[0].reviewRating.useful);
       expect(data[0].reviewRating.funny).toBe(testReviewData[0].reviewRating.funny);
       expect(data[0].reviewRating.cool).toBe(testReviewData[0].reviewRating.cool);

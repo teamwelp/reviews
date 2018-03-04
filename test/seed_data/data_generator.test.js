@@ -3,6 +3,7 @@ const groupData = require('../../server/seed_data/data.js');
 
 const fakeUsers = mockData.userData;
 const fakeReviews = mockData.reviews;
+const fakeBusinesses = mockData.businessData;
 
 const users = groupData.users;
 const businesses = groupData.businesses;
@@ -29,10 +30,13 @@ describe('test mock data generator', () => {
     expect(typeof fakeReviews[0].businessRating).toBe('number');
     expect(typeof fakeReviews[0].dateCreated).toBe('object');
     expect(typeof fakeReviews[0].text).toBe('string');
-    expect(typeof fakeReviews[0].image).toBe('string');
+    expect(Array.isArray(fakeReviews[0].images)).toBe(true);
     expect(typeof fakeReviews[0].reviewRating.useful).toBe('number');
     expect(typeof fakeReviews[0].reviewRating.funny).toBe('number');
     expect(typeof fakeReviews[0].reviewRating.cool).toBe('number');
+
+    expect(typeof fakeBusinesses[0].businessId).toBe('number');
+    expect(typeof fakeBusinesses[0].businessName).toBe('string');
   });
 });
 

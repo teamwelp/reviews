@@ -32,7 +32,7 @@ describe('test reviews route', () => {
   let response;
 
   beforeAll(async () => {
-    response = await request(app).get('/biz/200/reviews');
+    response = await request(app).get('/biz/200/reviews?search=sequi');
   });
 
   test('it should return business reviews from database', async () => {
@@ -44,7 +44,7 @@ describe('test reviews route', () => {
     expect(JSON.parse(response.text)[0]).toHaveProperty('businessRating');
     expect(JSON.parse(response.text)[0]).toHaveProperty('dateCreated');
     expect(JSON.parse(response.text)[0]).toHaveProperty('text');
-    expect(JSON.parse(response.text)[0]).toHaveProperty('image');
+    expect(JSON.parse(response.text)[0]).toHaveProperty('images');
     expect(JSON.parse(response.text)[0]).toHaveProperty('reviewRating');
   });
 
@@ -79,3 +79,30 @@ describe('test error handlers for addUsersToReviews function', async () => {
     expect(response[0].user).toBe('user not found');
   });
 });
+
+describe('test "count" endpoint', () => {
+  let response;
+  beforeAll(async () => {
+    response = await request(app).get('/biz/200/reviews/count?search=sequi');
+  });
+
+  test('it should count the number of reviews', async () => {
+    expect(typeof JSON.parse(response.text).count).toBe('number');
+  });
+
+  test('it should return an status code 500 for wroong params', async () => {
+    response = await request(app).get('/biz/xxx/reviews/count');
+    expect(response.statusCode).toBe(500);
+
+  });
+});
+
+describe('test "/:businessId" endpoint', () => {
+  test('it should render the html of the client', async () => {
+  const response = await request(app).get('/biz/200');
+
+  expect(response.text).toMatch(/businessId = 200/);
+
+  });
+});
+
