@@ -9,7 +9,8 @@ router.route('/:businessId')
     db.retrieveData('businesses', { businessId: req.params.businessId })
       .then((businessInfo) => {
         res.render('index', { businessId: req.params.businessId, businessName: businessInfo[0].businessName });
-      });
+      })
+      .catch(() => res.status(500).send('business not found'));
   });
 
 router.route('/:businessId/reviews')
