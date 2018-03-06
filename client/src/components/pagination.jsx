@@ -12,20 +12,20 @@ const Pagination = (props) => {
   });
   let previous = null;
   let next = null;
-
   if (props.currentPage > 1) {
     previous = (
-      <span className={style.previousPage}>  <span className={style.icons}>{'<'}</span>
-        <span onClick={e => props.clickPage(Math.max(props.currentPage - 1, 1))}>Previous</span>
+      <span className={style.previousPage} onClick={e => props.clickPage(Math.max(props.currentPage - 1, 1))}>  
+        <span className={style.icons}>{'<'}</span>
+        <span>Previous</span>
       </span>
     );
   }
 
   if (props.currentPage < pages) {
     next = (
-      <span className={style.nextPage}>
+      <span className={style.nextPage} onClick={e => props.clickPage(Math.min(props.currentPage + 1, pages))}>
+        <span>Next</span>
         <span className={style.icons}>{'>'}</span>
-        <span onClick={e => props.clickPage(Math.min(props.currentPage + 1, pages))}>Next</span>
       </span>
     );
   }
@@ -44,6 +44,7 @@ const Pagination = (props) => {
 Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   reviewCount: PropTypes.number.isRequired,
+  clickPage: PropTypes.func.isRequired,
 };
 
 export default Pagination;

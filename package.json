@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "webpack -w",
-    "test": "jest  --coverage --forceExit",
+    "test": "jest  --coverage --silent",
     "seed": "node server/seed_data/addDataToDB.js",
     "server": "nodemon server/server.js"
   },
@@ -52,12 +52,12 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.2",
-    "react-test-renderer": "^16.2.0",
     "faker": "^4.1.0",
     "file-system": "^2.2.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.4.2",
     "nodemon": "^1.15.1",
+    "react-test-renderer": "^16.2.0",
     "supertest": "^3.0.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"

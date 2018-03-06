@@ -1,6 +1,6 @@
 const helpers = require('../../server/helpers/helpers.js');
 const request = require('supertest');
-const app = require('../../server/server.js');
+const app = require('../../server/index.js');
 const mongoose = require('mongoose');
 const db = require('../../db/models/review.js');
 
@@ -12,11 +12,11 @@ afterAll( async () => {
   await mongoose.disconnect();
 });
 
-describe('test root route', () => {
+describe('test home route', () => {
   let response;
 
   beforeAll(async () => {
-    response = await request(app).get('/');
+    response = await request(app).get('/biz/200');
   });
 
   test('it should respond when a GET request is sent to root route', async () => {
@@ -24,7 +24,13 @@ describe('test root route', () => {
   });
 
   test('root should serve index.html', async () => {
-    expect(response.text).toMatch(/html/);
+    expect(response.text).toMatch(/Welp Reviews/);
+  });
+
+  test('it should return "business not found" when business ID is not in the DB', async () => {
+    response = await request(app).get('/biz/XXX');
+    expect(response.statusCode).toBe(500);
+    expect(response.text).toBe('business not found');
   });
 });
 
