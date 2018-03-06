@@ -8,13 +8,28 @@ import Pagination from './pagination';
 import './styles/reset.css';
 
 class Reviews extends React.Component {
-  static extend(obj1, obj2) {
-    const obj = obj1;
-    Object.keys(obj2).forEach((key) => {
-      obj[key] = obj2[key];
+  static extend(obj1, ...args) {
+    const mainObj = obj1;
+    args.forEach((obj) => {
+      Object.keys(obj).forEach((key) => {
+        mainObj[key] = obj[key];
+      });
     });
+    return mainObj;
+  }
 
-    return obj;
+  static processReviewText(data, keyword) {
+    const newData = data;
+    newData.reviews.forEach((review) => {
+      let { text } = review;
+      if (keyword !== null) {
+        const span = new RegExp(`(${keyword})`, 'gi');
+        text = review.text.replace(span, `<b class="${style.searchText}">$1</b>`);
+      }
+      const newReview = review;
+      newReview.text = text;
+    });
+    return newData;
   }
 
   constructor(props) {
@@ -56,15 +71,19 @@ class Reviews extends React.Component {
       .then(response => ({ reviews: response.data }));
   }
 
-  updateReviewRender() {
+  updateReviewRender(keyword = null) {
     const promises = [];
     promises.push(this.retrieveData());
     promises.push(this.getReviewCount());
 
     Promise.all(promises)
       .then((data) => {
-        const combinedData = this.constructor.extend(data[0], data[1]);
-        return this.constructor.extend(combinedData, { loading: false });
+        const combinedData = this.constructor.extend(
+          data[0],
+          data[1],
+          { loading: false },
+        );
+        return this.constructor.processReviewText(combinedData, keyword);
       })
       .then(combinedData => this.setState(combinedData));
   }
@@ -81,7 +100,7 @@ class Reviews extends React.Component {
       sortBy: sortQueries[sortQuery],
       loading: true,
       currentPage: 1,
-    }, () => this.updateReviewRender());
+    }, () => this.updateReviewRender(this.state.searchText));
   }
 
   handleClickPage(page) {
@@ -89,7 +108,7 @@ class Reviews extends React.Component {
       this.setState({
         currentPage: page,
         loading: true,
-      }, () => this.updateReviewRender());
+      }, () => this.updateReviewRender(this.state.searchText));
     }
   }
 
@@ -98,12 +117,12 @@ class Reviews extends React.Component {
       this.setState({
         searchText: keyword,
         loading: true,
-      }, () => this.updateReviewRender());
+      }, () => this.updateReviewRender(keyword));
     } else {
       this.setState({
         searchText: null,
         loading: true,
-      }, () => this.updateReviewRender());
+      }, () => this.updateReviewRender(null));
     }
   }
 

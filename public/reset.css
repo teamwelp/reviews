@@ -48,3 +48,7 @@ table {
   line-height: 15px;
   padding: 1px 0;
 }
+
+b {
+  font-weight: bold;
+}

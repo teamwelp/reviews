@@ -9,7 +9,7 @@ const ReviewWrapper = (props) => {
   return (
     <div className={style.reviewWrapper}>
       <ReviewHeader rating={props.review.businessRating} date={props.review.dateCreated} />
-      <div className={style.reviewText}>{props.review.text.replace('\n', '\n\n')}</div>
+      <div className={style.reviewText} dangerouslySetInnerHTML={{ __html: props.review.text }}></div>
       <Pictures images={props.review.images} />
       <Votes votes={props.review.reviewRating} />
     </div>

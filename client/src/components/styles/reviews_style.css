@@ -23,3 +23,8 @@
 .transparentFeed {
   opacity: 0.5;
 }
+
+.searchText {
+  font-weight: bold;
+  background: gray;
+}
