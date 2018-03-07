@@ -13,16 +13,17 @@
   "name": "",
   "version": "",
   "description": "",
+  "main": "bundle.js",
   "author": "",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "webpack -w",
+    "build": "webpack -w",
     "test": "jest  --coverage --silent",
     "seed": "node server/seed_data/addDataToDB.js",
-    "server": "nodemon server/server.js"
+    "start": "nodemon server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

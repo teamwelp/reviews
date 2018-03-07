@@ -1,6 +1,6 @@
 .searchBox {
   box-sizing: border-box;
-  width: 250px;
+  width: 220px;
   height: 30px;
   padding: 5px 9px;
   background: white;
@@ -17,7 +17,7 @@
   border: 1px solid #8d0005;
   background: linear-gradient(#d90007, #c91400);
   float: left;
-  margin-right: 30px;
+  margin-right: 12px;
   cursor: pointer;
 }
 
@@ -25,7 +25,7 @@
   height: 30px;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 9px;
-  width: 700px;
+  width: 629px;
 }
 
 .searchIcon {
@@ -42,7 +42,7 @@
   border: 1px solid #8d0005;
   background: linear-gradient(#d90007, #c91400);
   float: left;
-  margin-right: 30px;
+  margin-right: 12px;
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
@@ -58,5 +58,5 @@
   line-height: 30px;
   color: #d32323;
   font-weight: bold;
-  margin-right: 30px;
+  margin-right: 12px;
 }

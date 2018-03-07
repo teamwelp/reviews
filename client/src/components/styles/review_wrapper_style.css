@@ -1,7 +1,6 @@
 .reviewWrapper {
   overflow: auto;
   width: 381.875px;
-  padding: 0 15px;
   float: left;
 }
 
@@ -34,6 +33,7 @@
 
 .date {
   margin: 5px;
+  color: #666;
 }
 
 .voteButton {

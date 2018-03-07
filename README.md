@@ -1,13 +1,12 @@
-# Project Name
+# WELP
 
-> Project description
+> Yelp clone
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/teamWelp/relatedBusinesses
+  - https://github.com/teamWelp/businessInfo
+  - https://github.com/teamWelp/photoGallery
 
 ## Table of Contents
 
@@ -34,6 +33,10 @@ From within the root directory:
 
 ```sh
 npm install -g webpack
+npm install -g nodemon
 npm install
+npm run build
+npm run seed
+npm run start
 ```
 

@@ -1,8 +1,10 @@
 .feed {
-  width: 700px;
+  width: 629px;
   float: left;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
+  margin-left: 15px;
+  padding-right: 30px;
   position: relative;
 }
 

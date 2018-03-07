@@ -1,16 +1,12 @@
-.reviewCount {
-
-}
-
 .container {
-  width: 680px;
-  margin: 0 10px;
+  width: 629px;
+  margin-right: 10px;
   height: 30px;
   border-bottom: 1px solid #e6e6e6;
 }
 
 .text {
-  padding: 0 10px;
+  padding-right: 10px;
   font-size: 14px;
   line-height: 30px;
   float: left;
@@ -18,7 +14,7 @@
 
 .pageContainer {
   float: right;
-  padding: 0 10px;
+  padding-left: 10px;
   color: #0073bb;
 }
 
@@ -28,6 +24,10 @@
   font-size: 14px;
   line-height: 30px;
   cursor: pointer;
+}
+
+.nextPage {
+  padding-right: 0px;
 }
 
 .currentPage {

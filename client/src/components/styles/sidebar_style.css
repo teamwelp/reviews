@@ -11,7 +11,7 @@
   float: left;
   width: 217.125px;
   height: 222px;
-  padding: 0 15px;
+  padding-right: 15px;
   font-size: 12px;
 }
 
@@ -21,9 +21,14 @@
   text-decoration: none;
 }
 
+.username:hover {
+  text-decoration: underline;
+}
+
 .userLocation {
   padding: 5px 0;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .userInfo {
@@ -47,6 +52,8 @@
   vertical-align: middle;
   line-height: 16px;
   height: 16px;
+  font-size: 12px;
+  color: #666;
 }
 
 .optionContainer {
@@ -91,10 +98,14 @@
 .passportContainer {
   width: 217px;
   overflow: auto;
-  font-size: 12px;
+  font-size: 14px;
   padding-bottom: 5px;
 }
 
 .noBorder {
   border-bottom-style: none;
+}
+
+.bold {
+  font-weight: bold;
 }
