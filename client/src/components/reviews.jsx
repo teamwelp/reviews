@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import ReviewList from './review_list';
@@ -108,7 +109,10 @@ class Reviews extends React.Component {
       this.setState({
         currentPage: page,
         loading: true,
-      }, () => this.updateReviewRender(this.state.searchText));
+      }, () => {
+        this.node.scrollIntoView();
+        this.updateReviewRender(this.state.searchText);
+      });
     }
   }
 
@@ -135,7 +139,7 @@ class Reviews extends React.Component {
       feedStyle += ` ${style.transparentFeed}`;
     }
     return (
-      <div className={feedStyle}>
+      <div className={feedStyle} ref={(node) => { this.node = node; }}>
         <div className={style.titleContainer}>
           <span className={style.title}>Recommended Reviews for </span>
           <span className={style.businessName}>{this.props.businessName}</span>
