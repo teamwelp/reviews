@@ -25,6 +25,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Node 6.13.0
 - etc
 
+add icon cdns to index.html
+
+  - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://use.fontawesome.com/releases/v5.0.6/css/all.css
+
 ## Development
 
 ### Installing Dependencies
