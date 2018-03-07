@@ -54,26 +54,35 @@ class DisplaySettings extends React.Component {
     let closeSearchStyle;
     let searchBoxStyle;
     let searchButtonStyle;
+    let searchTagStyle;
+    let languageDropDownStyle;
     if (this.state.searching === false) {
       closeSearchStyle = style.hide;
+      searchTagStyle = style.hide;
       searchBoxStyle = style.searchBox;
       searchButtonStyle = style.searchButton;
     } else {
       closeSearchStyle = style.closeSearch;
+      searchTagStyle = style.searchTag;
       searchBoxStyle = style.hide;
       searchButtonStyle = style.hide;
+      languageDropDownStyle = style.hide;
     }
 
     return (
 
       <div className={style.container}>
         <button className={closeSearchStyle} onClick={() => this.handleClick('close')}>Close Search</button>
+        <div className={searchTagStyle}>{`${this.props.reviewCount} reviews mentioning "${this.props.searchText}"`}</div>
         <input className={searchBoxStyle} type="text" placeholder="Search within the reviews" value={this.state.searchInput} onChange={e => this.handleChange(e)} onKeyPress={e => this.handleKeyPress(e)}></input>
         <button className={searchButtonStyle} onClick={() => this.handleClick('search')} >
           <i className={`material-icons ${style.searchIcon}`}>search</i>
         </button>
         <Dropdown selection={sortSelection.selection} label={sortSelection.label} clickHandler={this.props.clickSort} />
-        <Dropdown selection={languageSort.selection} label={languageSort.label} reviewCount={` (${this.props.reviewCount})`} />
+        <span className={languageDropDownStyle}>
+          <Dropdown selection={languageSort.selection} label={languageSort.label} reviewCount={` (${this.props.reviewCount})`} />
+        </span>
+        
       </div>
 
     );
@@ -84,6 +93,7 @@ DisplaySettings.propTypes = {
   clickSort: PropTypes.func.isRequired,
   reviewCount: PropTypes.number.isRequired,
   clickSearch: PropTypes.func.isRequired,
+  searchText: PropTypes.string.isRequired,
 };
 
 export default DisplaySettings;

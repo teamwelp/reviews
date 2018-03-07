@@ -52,3 +52,11 @@
 .hide {
   display: none;
 }
+
+.searchTag {
+  float: left;
+  line-height: 30px;
+  color: #d32323;
+  font-weight: bold;
+  margin-right: 30px;
+}

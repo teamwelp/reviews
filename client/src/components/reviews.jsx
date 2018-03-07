@@ -140,7 +140,7 @@ class Reviews extends React.Component {
           <span className={style.title}>Recommended Reviews for </span>
           <span className={style.businessName}>{this.props.businessName}</span>
         </div>
-        <DisplaySettings clickSort={sortBy => this.handleClickSort(sortBy)} reviewCount={this.state.reviewCount} clickSearch={(keyword, purpose) => this.handleSearch(keyword, purpose)} />
+        <DisplaySettings searchText={this.state.searchText} clickSort={sortBy => this.handleClickSort(sortBy)} reviewCount={this.state.reviewCount} clickSearch={(keyword, purpose) => this.handleSearch(keyword, purpose)} />
         <ReviewList reviews={this.state.reviews} />
         <Pagination reviewCount={this.state.reviewCount} currentPage={this.state.currentPage} clickPage={page => this.handleClickPage(page)} />
       </div>
