@@ -4,7 +4,7 @@ const db = require('../../db/models/review.js');
 
 describe('test insertDataToDB method (integration test)', () => {
   beforeAll(async () => {
-    await mongoose.connect('mongodb://localhost/welp');
+    await mongoose.connect('mongodb://localhost/reviews');
   });
 
   afterAll( async () => {

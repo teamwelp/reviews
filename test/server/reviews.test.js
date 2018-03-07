@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const db = require('../../db/models/review.js');
 
 beforeAll(async () => {
-  await mongoose.connect('mongodb://localhost/welp');
+  await mongoose.connect('mongodb://localhost/reviews');
 });
 
 afterAll( async () => {
