@@ -33,11 +33,7 @@ const Votes = (props) => {
 };
 
 Votes.propTypes = {
-  votes: PropTypes.object,
-};
-
-Votes.defaultProps = {
-  votes: {},
+  votes: PropTypes.object.isRequired,
 };
 
 export default Votes;

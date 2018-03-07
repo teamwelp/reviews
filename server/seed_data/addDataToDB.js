@@ -8,6 +8,13 @@ helper.insertDataToDB('users', mockData.userData)
   .then(() => console.log('complete'))
   .catch((error) => { throw error; });
 
+<<<<<<< HEAD
+helper.insertDataToDB('businesses', mockData.businessData)
+  .then(() => console.log('complete'))
+  .catch((error) => { throw error; });
+
+=======
+>>>>>>> master
 helper.insertDataToDB('reviews', mockData.reviews)
   .then(() => {
     mongoose.disconnect();

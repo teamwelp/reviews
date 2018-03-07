@@ -1,50 +1,89 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Reviews from '../../client/src/components/reviews';
 import ReviewList from '../../client/src/components/review_list';
+import DisplaySettings from '../../client/src/components/display_settings';
+import Pagination from '../../client/src/components/pagination';
 
-describe('test Reviews component', () => {
-  const reviewsComponent = shallow(<Reviews />);
+jest.mock('axios');
 
-  reviewsComponent.setState({
-    businessName: 'foobar',
-    reviews: [
-      {
-        reviewId: 300,
-        businessId: 200,
-        user: {
-          userId: 60,
-          username: 'DukeIvy1',
-          image: 'http://lorempixel.com/400/200/people',
-          friends: 39,
-          review: 33,
-          photos: 37,
-        },
-        businessRating: 5,
-        dateCreated: '2017-12-02T00:32:49.646Z',
-        text: 'Tenetur consectetur similique harum hic nesciunt velit repellendus commodi fuga. Omnis vero deserunt.',
-        image: 'http://lorempixel.com/400/200/food',
-        reviewRating: {
-          useful: 372,
-          funny: 589,
-          cool: 880,
-        },
-      },
-    ],
+let reviewsComponent;
+let displaySettingsComponent;
+
+beforeEach(() => {
+  reviewsComponent = shallow(<Reviews businessId={200} businessName="foobar" />);
+});
+
+describe('test Reviews component', async () => {
+  beforeEach(() => {
+    reviewsComponent.update();
   });
 
-  const reviewListComponent = reviewsComponent.find(ReviewList);
-
-  test('should render the business name', () => {
-    expect(reviewsComponent.contains(<span className="businessName">foobar</span>)).toBe(true);
+  test('should contain the DisplaySettings component', () => {
+    expect(reviewsComponent.exists(<DisplaySettings />)).toBe(true);
   });
-
+  
   test('should contain the ReviewList component', () => {
     expect(reviewsComponent.exists(<ReviewList />)).toBe(true);
   });
 
-  test('should pass the reviews state to ReviewList component', () => {
-    expect(reviewListComponent.props().reviews).toEqual(reviewsComponent.state().reviews);
+  test('should contain the Pagination component', () => {
+    expect(reviewsComponent.exists(<Pagination />)).toBe(true);
+  });
+
+  test('should render the business name', () => {
+    expect(reviewsComponent.find('[className="businessName"]').text()).toBe('foobar');
   });
 });
+
+describe('test handleSearch method when searching', () => {
+  beforeEach(() => {
+    reviewsComponent.instance().handleSearch('foobar', 'search');
+  });
+
+  test('it should query the server with the search keyword', () => {
+    expect(reviewsComponent.state().searchText).toBe('foobar');
+    expect(reviewsComponent.state().reviews[0].reviewId).toBe(300);
+    expect(reviewsComponent.state().reviews[0].businessRating).toBe(300);
+    expect(reviewsComponent.state().reviews[0].user.userId).toBe(300);
+  });
+});
+
+describe('test handleSearch method when closing search', () => {
+  beforeEach(() => {
+    reviewsComponent.instance().handleSearch(null, 'close');
+  });
+
+  test('it should render all reviews when search result is closed', () => {  
+    expect(reviewsComponent.state().reviews[0].reviewId).toBe(100);
+    expect(reviewsComponent.state().reviews[0].businessRating).toBe(100);
+    expect(reviewsComponent.state().reviews[0].user.userId).toBe(100);
+  });
+});
+
+describe('test handleClickSort', () => {
+  beforeEach(() => {
+    reviewsComponent.instance().handleClickSort('Oldest First');
+  });
+
+  test('it should render all reviews when search result is closed', () => {
+    expect(reviewsComponent.state().reviews[0].reviewId).toBe(500);
+    expect(reviewsComponent.state().reviews[0].businessRating).toBe(500);
+    expect(reviewsComponent.state().reviews[0].user.userId).toBe(500);
+  });
+});
+
+describe('test handleClickPage', () => {
+  beforeEach(() => {
+    reviewsComponent.instance().handleClickPage(2);
+  });
+
+  test('it should render all reviews when search result is closed', () => {
+    expect(reviewsComponent.state().reviews[0].reviewId).toBe(400);
+    expect(reviewsComponent.state().reviews[0].businessRating).toBe(400);
+    expect(reviewsComponent.state().reviews[0].user.userId).toBe(400);
+  });
+});
+
+
 

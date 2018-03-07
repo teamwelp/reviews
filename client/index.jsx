@@ -1,8 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Reviews from './src/components/reviews.jsx';
+import Reviews from './src/components/reviews';
 
-const App = () => <Reviews />;
-
-ReactDOM.render(<App />, document.getElementById('app'));
-
+ReactDOM.render(<Reviews businessId={window.businessId} businessName={window.businessName} />, document.getElementById('reviews'));

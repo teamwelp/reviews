@@ -15,11 +15,7 @@ const ReviewList = (props) => {
 };
 
 ReviewList.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.object),
-};
-
-ReviewList.defaultProps = {
-  reviews: [],
+  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ReviewList;

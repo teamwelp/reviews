@@ -13,24 +13,37 @@
   "name": "",
   "version": "",
   "description": "",
+  "main": "bundle.js",
   "author": "",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+<<<<<<< HEAD
+    "build": "webpack -w",
+    "test": "jest  --coverage --silent",
+    "seed": "node server/seed_data/addDataToDB.js",
+    "start": "nodemon server/server.js"
+=======
     "start": "webpack -w",
     "seed": "node server/seed_data/addDataToDB.js",
     "server": "nodemon server/server.js",
     "test": "jest --coverage --forceExit"
+>>>>>>> master
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6",
+    "path": "^0.12.7",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -50,13 +63,19 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "faker": "^4.1.0",
+    "file-system": "^2.2.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.2",
+    "nodemon": "^1.15.1",
     "react-test-renderer": "^16.2.0",
+<<<<<<< HEAD
+=======
     "faker": "^4.1.0",
     "file-system": "^2.2.2",
     "jest": "^22.4.2",
     "nodemon": "^1.15.1",
+>>>>>>> master
     "supertest": "^3.0.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"

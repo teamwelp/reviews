@@ -30,7 +30,11 @@ describe('test ReviewWrapper component', () => {
   const reviewWrapperCompoent = shallow(<ReviewWrapper review={review} />);
 
   test('it should render the review text', () => {
+<<<<<<< HEAD
+    expect(reviewWrapperCompoent.find('[className="reviewText"]').prop('dangerouslySetInnerHTML').__html).toBe(review.text);
+=======
     expect(reviewWrapperCompoent.find('[className="reviewText"]').text()).toBe(review.text);
+>>>>>>> master
   });
 
   test('it should pass the business rating and the date created to ReviewHeader component', () => {
