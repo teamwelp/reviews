@@ -1,6 +1,10 @@
 const helpers = require('../../server/helpers/helpers.js');
 const request = require('supertest');
+<<<<<<< HEAD
 const app = require('../../server/index.js');
+=======
+const app = require('../../server/server.js');
+>>>>>>> master
 const mongoose = require('mongoose');
 const db = require('../../db/models/review.js');
 
@@ -12,11 +16,19 @@ afterAll( async () => {
   await mongoose.disconnect();
 });
 
+<<<<<<< HEAD
 describe('test home route', () => {
   let response;
 
   beforeAll(async () => {
     response = await request(app).get('/biz/200');
+=======
+describe('test root route', () => {
+  let response;
+
+  beforeAll(async () => {
+    response = await request(app).get('/');
+>>>>>>> master
   });
 
   test('it should respond when a GET request is sent to root route', async () => {
@@ -24,6 +36,7 @@ describe('test home route', () => {
   });
 
   test('root should serve index.html', async () => {
+<<<<<<< HEAD
     expect(response.text).toMatch(/Welp Reviews/);
   });
 
@@ -31,6 +44,9 @@ describe('test home route', () => {
     response = await request(app).get('/biz/XXX');
     expect(response.statusCode).toBe(500);
     expect(response.text).toBe('business not found');
+=======
+    expect(response.text).toMatch(/html/);
+>>>>>>> master
   });
 });
 
@@ -38,7 +54,11 @@ describe('test reviews route', () => {
   let response;
 
   beforeAll(async () => {
+<<<<<<< HEAD
     response = await request(app).get('/biz/200/reviews?search=sequi');
+=======
+    response = await request(app).get('/businesses/200/reviews');
+>>>>>>> master
   });
 
   test('it should return business reviews from database', async () => {
@@ -50,7 +70,11 @@ describe('test reviews route', () => {
     expect(JSON.parse(response.text)[0]).toHaveProperty('businessRating');
     expect(JSON.parse(response.text)[0]).toHaveProperty('dateCreated');
     expect(JSON.parse(response.text)[0]).toHaveProperty('text');
+<<<<<<< HEAD
     expect(JSON.parse(response.text)[0]).toHaveProperty('images');
+=======
+    expect(JSON.parse(response.text)[0]).toHaveProperty('image');
+>>>>>>> master
     expect(JSON.parse(response.text)[0]).toHaveProperty('reviewRating');
   });
 
@@ -65,7 +89,11 @@ describe('test reviews route', () => {
 });
 
 describe('test error handler of reviews route', async () => {
+<<<<<<< HEAD
   const response = await request(app).get('/biz/xxxx/reviews');
+=======
+  const response = await request(app).get('/businesses/xxxx/reviews');
+>>>>>>> master
 
   test('it should return a 500 status code for non-existent business id', async () => {
     expect(response.statusCode).toBe(500);
@@ -85,6 +113,7 @@ describe('test error handlers for addUsersToReviews function', async () => {
     expect(response[0].user).toBe('user not found');
   });
 });
+<<<<<<< HEAD
 
 describe('test "count" endpoint', () => {
   let response;
@@ -112,3 +141,5 @@ describe('test "/:businessId" endpoint', () => {
   });
 });
 
+=======
+>>>>>>> master

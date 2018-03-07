@@ -4,6 +4,7 @@ const helpers = require('../helpers/helpers.js');
 
 const router = express.Router();
 
+<<<<<<< HEAD
 router.route('/:businessId')
   .get((req, res) => {
     db.retrieveData('businesses', { businessId: req.params.businessId })
@@ -34,11 +35,22 @@ router.route('/:businessId/reviews/count')
     db.countData('reviews', searchQuery)
       .then((count) => {
         res.send({ count });
+=======
+router.route('/:businessId/reviews')
+  .get((req, res) => {
+    db.retrieveData('reviews', { businessId: req.params.businessId })
+      .then(helpers.addUsersToReviews)
+      .then((updatedReviews) => {
+        res.send(updatedReviews);
+>>>>>>> master
       })
       .catch((error) => {
         res.status(500).send(error);
       });
   });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 module.exports = router;

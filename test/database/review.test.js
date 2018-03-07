@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const db = require('../../db/models/review');
+=======
+const db = require('../../db/models/review.js');
+>>>>>>> master
 const mongoose = require('mongoose');
 
 describe('test database methods', () => {

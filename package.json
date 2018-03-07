@@ -20,10 +20,17 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+<<<<<<< HEAD
     "build": "webpack -w",
     "test": "jest  --coverage --silent",
     "seed": "node server/seed_data/addDataToDB.js",
     "start": "nodemon server/server.js"
+=======
+    "start": "webpack -w",
+    "seed": "node server/seed_data/addDataToDB.js",
+    "server": "nodemon server/server.js",
+    "test": "jest --coverage --forceExit"
+>>>>>>> master
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -41,6 +48,9 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "style-loader": "^0.20.2"
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "babel-jest": "^22.4.1",
@@ -59,6 +69,13 @@
     "jest": "^22.4.2",
     "nodemon": "^1.15.1",
     "react-test-renderer": "^16.2.0",
+<<<<<<< HEAD
+=======
+    "faker": "^4.1.0",
+    "file-system": "^2.2.2",
+    "jest": "^22.4.2",
+    "nodemon": "^1.15.1",
+>>>>>>> master
     "supertest": "^3.0.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"

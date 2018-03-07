@@ -1,10 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReviewListEntry from '../../client/src/components/review_list_entry';
+<<<<<<< HEAD
 import Sidebar from '../../client/src/components/sidebar';
 import ReviewWrapper from '../../client/src/components/review_wrapper';
 
 
+=======
+import ReviewWrapper from '../../client/src/components/review_wrapper';
+
+>>>>>>> master
 describe('test ReviewListEntry component', () => {
   const review = {
     reviewId: 300,
@@ -20,6 +25,7 @@ describe('test ReviewListEntry component', () => {
   };
 
   const reviewListEntryComponent = shallow(<ReviewListEntry review={review} />);
+<<<<<<< HEAD
   const sidebarComponent = reviewListEntryComponent.find(Sidebar);
   const reviewWrapperComponent = reviewListEntryComponent.find(ReviewWrapper);
 
@@ -31,6 +37,10 @@ describe('test ReviewListEntry component', () => {
     expect(sidebarComponent.props().user).toEqual(review.user);
   });
 
+=======
+  const reviewWrapperComponent = reviewListEntryComponent.find(ReviewWrapper);
+
+>>>>>>> master
   test('it should render the ReviewWrapper component', () => {
     expect(reviewListEntryComponent.exists(ReviewWrapper)).toBe(true);
   });
@@ -38,6 +48,7 @@ describe('test ReviewListEntry component', () => {
   test('it should pass the review to the ReviewWrapper component', () => {
     expect(reviewWrapperComponent.props().review).toEqual(review);
   });
+<<<<<<< HEAD
 
   test('it should change showOptions state to true during mouse enter and mouse leave event', () => {
     reviewListEntryComponent.find('li').simulate('mouseenter');
@@ -49,3 +60,6 @@ describe('test ReviewListEntry component', () => {
     expect(reviewListEntryComponent.state('showOptions')).toBe(false);
   });
 });
+=======
+});
+>>>>>>> master
