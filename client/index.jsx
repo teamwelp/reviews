@@ -5,7 +5,7 @@ import Reviews from './src/components/reviews';
 import url from '../url';
 
 if (window.businessName === undefined) {
-  const businessId = window.location.href.split('/')[window.location.href.split('/').length - 1];
+  const businessId = window.location.href.slice(window.location.href.search('biz') + 4).replace('/', '');
   axios.get(`${url}/biz/${businessId}?API=true`)
     .then(response => response.data.businessName)
     .then((businessName) => { ReactDOM.render(<Reviews businessId={Number(businessId)} businessName={businessName} />, document.getElementById('reviews')); });
