@@ -30,6 +30,9 @@ add icon cdns to index.html
   - https://fonts.googleapis.com/icon?family=Material+Icons
   - https://use.fontawesome.com/releases/v5.0.6/css/all.css
 
+add this url to a script tag in your index.html:
+  http://localhost:9003/dist/bundle.js
+
 ## Development
 
 ### Installing Dependencies
