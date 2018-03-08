@@ -7,6 +7,7 @@ import style from './styles/reviews_style.css';
 import DisplaySettings from './display_settings';
 import Pagination from './pagination';
 import './styles/reset.css';
+import url from '../../../url';
 
 class Reviews extends React.Component {
   static extend(obj1, ...args) {
@@ -55,7 +56,7 @@ class Reviews extends React.Component {
       searchQuery = `?search=${this.state.searchText}`;
     }
 
-    return axios.get(`/biz/${this.props.businessId}/reviews/count${searchQuery}`)
+    return axios.get(`${url}/biz/${this.props.businessId}/reviews/count${searchQuery}`)
       .then(response => ({ reviewCount: response.data.count }));
   }
 
@@ -68,7 +69,7 @@ class Reviews extends React.Component {
       searchQuery = `&search=${this.state.searchText}`;
     }
 
-    return axios.get(`/biz/${this.props.businessId}/reviews?${sortBy}&${startAt}${searchQuery}`)
+    return axios.get(`${url}/biz/${this.props.businessId}/reviews?${sortBy}&${startAt}${searchQuery}`)
       .then(response => ({ reviews: response.data }));
   }
 

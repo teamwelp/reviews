@@ -21,7 +21,7 @@ for (let i = 0; i < users.length; i += 1) {
 const reviews = [];
 
 for (let i = 0; i < businesses.length; i += 1) {
-  for (let j = 0; j < 200; j += 1) {
+  for (let j = 0; j < 50; j += 1) {
     reviews.push({
       reviewId: businesses[i].id + 100 + j,
       businessId: businesses[i].id,

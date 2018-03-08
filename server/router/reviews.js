@@ -13,7 +13,6 @@ router.route('/:businessId')
         } else {
           res.render('index', { businessId: req.params.businessId, businessName: businessInfo[0].businessName });
         }
-        
       })
       .catch(() => res.status(500).send('business not found'));
   });
