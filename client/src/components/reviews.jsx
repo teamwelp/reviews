@@ -122,11 +122,13 @@ class Reviews extends React.Component {
       this.setState({
         searchText: keyword,
         loading: true,
+        currentPage: 1,
       }, () => this.updateReviewRender(keyword));
     } else {
       this.setState({
         searchText: null,
         loading: true,
+        currentPage: 1,
       }, () => this.updateReviewRender(null));
     }
   }
