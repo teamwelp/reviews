@@ -4,10 +4,17 @@ import style from './styles/review_wrapper_style.css';
 
 const ReviewHeader = (props) => {
   const stars = Array(5);
+  
+  const starColors = {
+    0: 'grayStar',
+    1: 'oneStar',
+    2: 'twoStar',
+    3: 'threeStar',
+    4: 'fourStar',
+    5: 'fiveStar',
+  };
 
-  const starColor = props.rating < 5 ? 'orangeStar' : 'redStar';
-
-  stars.fill(starColor, 0, props.rating);
+  stars.fill(starColors[props.rating], 0, props.rating);
   stars.fill('grayStar', props.rating);
 
   const divStars = stars.map((className) => {

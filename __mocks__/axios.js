@@ -1,3 +1,5 @@
+import  mainURL from '../url';
+
 const reviews1 = [
   {
     reviewId: 100,
@@ -95,32 +97,32 @@ const reviews4 = [
 ];
 
 const get = (url) => {
-  if (url === '/biz/200/reviews?sortBy=newest&startAt=0') {
+  if (url === `${mainURL}/biz/200/reviews?sortBy=newest&startAt=0`) {
     return Promise.resolve({
       data: reviews1,
     });
   }
-  if (url === '/biz/200/reviews?sortBy=newest&startAt=0&search=foobar') {
+  if (url === `${mainURL}/biz/200/reviews?sortBy=newest&startAt=0&search=foobar`) {
     return Promise.resolve({
       data: reviews2,
     });
   }
-  if (url === '/biz/200/reviews/count') {
+  if (url === `${mainURL}/biz/200/reviews/count`) {
     return Promise.resolve({
       data: { count: 100 },
     });
   }
-  if (url === '/biz/200/reviews/count?search=foobar') {
+  if (url === `${mainURL}/biz/200/reviews/count?search=foobar`) {
     return Promise.resolve({
       data: { count: 200 },
     });
   }
-  if (url === '/biz/200/reviews?sortBy=newest&startAt=20') {
+  if (url === `${mainURL}/biz/200/reviews?sortBy=newest&startAt=20`) {
     return Promise.resolve({
       data: reviews3,
     });
   }
-  if (url === '/biz/200/reviews?sortBy=oldest&startAt=0') {
+  if (url === `${mainURL}/biz/200/reviews?sortBy=oldest&startAt=0`) {
     return Promise.resolve({
       data: reviews4,
     });

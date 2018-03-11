@@ -12,12 +12,12 @@ describe('test ReviewHeader component', () => {
     expect(reviewHeaderComponent.find('[className="date"]').text()).toBe(dateString);
   });
 
-  test('it should have the number of orange stars same as the rating', () => {
-    expect(reviewHeaderComponent.find('[className="orangeStar"]').length).toBe(4);
+  test('it should have the number of four stars same as the rating', () => {
+    expect(reviewHeaderComponent.find('[className="fourStar"]').length).toBe(4);
   });
 
   test('it should render all 5 stars as red when user gives a perfect rating', () => {
     reviewHeaderComponent.setProps({ rating: 5 });
-    expect(reviewHeaderComponent.find('[className="redStar"]').length).toBe(5);
+    expect(reviewHeaderComponent.find('[className="fiveStar"]').length).toBe(5);
   });
 });

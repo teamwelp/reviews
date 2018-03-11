@@ -4,8 +4,44 @@
   float: left;
 }
 
-.redStar {
+.fiveStar {
   background-color: #D32323;
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  border-radius: 3px;
+  float: left;
+}
+
+.fourStar {
+  background-color: #E06656;
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  border-radius: 3px;
+  float: left;
+}
+
+.threeStar {
+  background-color: #f15c00;
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  border-radius: 3px;
+  float: left;
+}
+
+.twoStar {
+  background-color: #F5C145;
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  border-radius: 3px;
+  float: left;
+}
+
+.oneStar {
+  background-color: #EABE83;
   width: 16px;
   height: 16px;
   margin: 1px;
@@ -22,7 +58,7 @@
   float: left;
 }
 
-.orangeStar {
+.threeStar {
   background-color: #f15c00;
   width: 16px;
   height: 16px;

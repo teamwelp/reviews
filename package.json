@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "webpack -w",
-    "test": "jest  --coverage --silent",
+    "test": "jest  --coverage --silent --forceExit",
     "seed": "node server/seed_data/addDataToDB.js",
     "start": "nodemon server/server.js"
   },

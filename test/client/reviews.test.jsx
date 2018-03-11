@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import axios from 'axios';
 import Reviews from '../../client/src/components/reviews';
 import ReviewList from '../../client/src/components/review_list';
 import DisplaySettings from '../../client/src/components/display_settings';
@@ -75,10 +76,14 @@ describe('test handleClickSort', () => {
 
 describe('test handleClickPage', () => {
   beforeEach(() => {
+    reviewsComponent.instance().node = {
+      scrollIntoView: () => {},
+    };
     reviewsComponent.instance().handleClickPage(2);
   });
 
   test('it should render all reviews when search result is closed', () => {
+        console.log(reviewsComponent.refs)
     expect(reviewsComponent.state().reviews[0].reviewId).toBe(400);
     expect(reviewsComponent.state().reviews[0].businessRating).toBe(400);
     expect(reviewsComponent.state().reviews[0].user.userId).toBe(400);

@@ -55,7 +55,6 @@ class Reviews extends React.Component {
     if (this.state.searchText !== null) {
       searchQuery = `?search=${this.state.searchText}`;
     }
-
     return axios.get(`${url}/biz/${this.props.businessId}/reviews/count${searchQuery}`)
       .then(response => ({ reviewCount: response.data.count }));
   }

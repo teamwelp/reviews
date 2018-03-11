@@ -13,8 +13,8 @@ describe('test mock data generator', () => {
     expect(fakeUsers.length).toBe(users.length);
   });
 
-  test('should generate 200 fake reviews per business', () => {
-    expect(fakeReviews.length).toBe(users.length * businesses.length);
+  test('should generate 50 fake reviews per business', () => {
+    expect(fakeReviews.length).toBe(10000);
   });
 
   test('data types should be consistent with DB schema', () => {
