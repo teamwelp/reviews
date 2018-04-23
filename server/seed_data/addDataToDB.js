@@ -2,7 +2,7 @@ const mockData = require('./data_generator.js');
 const mongoose = require('mongoose');
 const helper = require('./helper.js');
 
-mongoose.connect('mongodb://localhost/reviews');
+mongoose.connect(process.env.MONGOLAB_URI);
 
 helper.insertDataToDB('users', mockData.userData)
   .then(() => console.log('users complete'))
