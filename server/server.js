@@ -1,9 +1,9 @@
 const app = require('./index.js');
 
-const url = process.env.URL | 9000;
+const url = process.env.PORT | 9000;
 
 const server = app.listen(url, () => {
-  console.log(`listening to port ${url}`, process.env.MONGOLAB_URI);
+  console.log(`listening to port ${url}`);
 });
 
 module.exports = server;
