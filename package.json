@@ -23,8 +23,8 @@
     "build": "webpack -w",
     "test": "jest  --coverage --silent --forceExit",
     "seed": "node server/seed_data/addDataToDB.js",
-    "start": "nodemon server/server.js",
-    "heroku-postbuild": "webpack && npm run seed"
+    "heroku-postbuild": "webpack && npm run seed",
+    "start": "nodemon server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
