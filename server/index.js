@@ -9,7 +9,7 @@ app.use(cors());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/../public'));
 
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect(process.env.PORT);
 
 app.use(express.static(path.join(__dirname, '/../public')));
 
