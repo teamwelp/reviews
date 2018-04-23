@@ -7,7 +7,8 @@ import style from './styles/reviews_style.css';
 import DisplaySettings from './display_settings';
 import Pagination from './pagination';
 import './styles/reset.css';
-import url from '../../../url';
+
+const url = process.env.URL;
 
 class Reviews extends React.Component {
   static extend(obj1, ...args) {
