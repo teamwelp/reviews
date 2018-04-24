@@ -3,6 +3,7 @@ const businesses = require('./data.js').businesses;
 const users = require('./data.js').users;
 const faker = require('faker');
 const path = require('path');
+const imageList = require('./image_list');
 
 const userData = [];
 
@@ -31,7 +32,7 @@ for (let i = 0; i < businesses.length; i += 1) {
       businessRating: Math.floor(Math.random() * 5) + 1,
       dateCreated: faker.date.past(),
       text: faker.lorem.paragraphs(),
-      images: Array(Math.floor(Math.random() * 5)).fill(null).map(() => faker.image.food()),
+      images: Array(Math.floor(Math.random() * 5)).fill(null).map(() => `https://picsum.photos/400?image=${imageList[Math.floor(Math.random() * imageList.length)].id}`),
       reviewRating: {
         useful: faker.random.number({
           min: 2,
