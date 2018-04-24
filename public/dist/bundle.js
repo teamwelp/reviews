@@ -2337,20 +2337,12 @@ if(false) {
 }
 
 /***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = 'http://localhost:9003';
-
-/***/ }),
+/* 30 */,
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(process) {
 
 var _react = __webpack_require__(0);
 
@@ -2368,15 +2360,13 @@ var _reviews = __webpack_require__(60);
 
 var _reviews2 = _interopRequireDefault(_reviews);
 
-var _url = __webpack_require__(30);
-
-var _url2 = _interopRequireDefault(_url);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var url = process.env.URL | '';
 
 if (window.businessName === undefined) {
   var businessId = window.location.href.slice(window.location.href.search('biz') + 4).replace('/', '');
-  _axios2.default.get(_url2.default + '/biz/' + businessId + '?API=true').then(function (response) {
+  _axios2.default.get(url + '/biz/' + businessId + '?API=true').then(function (response) {
     return response.data.businessName;
   }).then(function (businessName) {
     _reactDom2.default.render(_react2.default.createElement(_reviews2.default, { businessId: Number(businessId), businessName: businessName }), document.getElementById('reviews'));
@@ -2384,6 +2374,7 @@ if (window.businessName === undefined) {
 } else {
   _reactDom2.default.render(_react2.default.createElement(_reviews2.default, { businessId: window.businessId, businessName: window.businessName }), document.getElementById('reviews'));
 }
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 32 */
