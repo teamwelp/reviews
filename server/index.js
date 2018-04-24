@@ -15,4 +15,6 @@ app.use(express.static(path.join(__dirname, '/../public')));
 
 app.use('/biz', reviewRouter);
 
+app.get('/', (req, res) => res.redirect('/biz/201'));
+
 module.exports = app;
