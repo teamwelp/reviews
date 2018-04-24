@@ -70,3 +70,7 @@ module.exports.businessData = businessData;
 // fs.writeFile(path.join(__dirname, '/mock_reviews.json'), JSON.stringify(reviews, null, 4), () => {
 //   console.log('completed');
 // });
+
+// fs.writeFile(path.join(__dirname, '/mock_businesses.json'), JSON.stringify(businessData, null, 4), () => {
+//   console.log('completed');
+// });
