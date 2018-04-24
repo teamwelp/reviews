@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Reviews from './src/components/reviews';
 
-const url = process.env.URL | '';
+const url = '';
 
 if (window.businessName === undefined) {
   const businessId = window.location.href.slice(window.location.href.search('biz') + 4).replace('/', '');

@@ -2342,7 +2342,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
 
 var _react = __webpack_require__(0);
 
@@ -2362,7 +2362,7 @@ var _reviews2 = _interopRequireDefault(_reviews);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var url = process.env.URL | '';
+var url = '';
 
 if (window.businessName === undefined) {
   var businessId = window.location.href.slice(window.location.href.search('biz') + 4).replace('/', '');
@@ -2374,7 +2374,6 @@ if (window.businessName === undefined) {
 } else {
   _reactDom2.default.render(_react2.default.createElement(_reviews2.default, { businessId: window.businessId, businessName: window.businessName }), document.getElementById('reviews'));
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 32 */
@@ -20506,7 +20505,7 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -20556,7 +20555,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var url = process.env.URL | '';
+var url = '';
 
 var Reviews = function (_React$Component) {
   _inherits(Reviews, _React$Component);
@@ -20772,7 +20771,6 @@ Reviews.propTypes = {
 };
 
 exports.default = Reviews;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 61 */

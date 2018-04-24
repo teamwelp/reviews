@@ -8,7 +8,7 @@ import DisplaySettings from './display_settings';
 import Pagination from './pagination';
 import './styles/reset.css';
 
-const url = process.env.URL | '';
+const url = '';
 
 class Reviews extends React.Component {
   static extend(obj1, ...args) {
