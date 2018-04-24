@@ -23,7 +23,7 @@
     "build": "webpack -w",
     "test": "jest  --coverage --silent --forceExit",
     "seed": "node server/seed_data/addDataToDB.js",
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
